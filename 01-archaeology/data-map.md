@@ -7,6 +7,7 @@
 | Campo | Valor |
 |---|---|
 | Público-alvo | DBA, QA e Arquitetura |
+| Responsável | paula, acumulando os papéis em estudo individual |
 | Data da leitura | 2026-09-17 |
 | Escopo | DBID 057; quatro DDMs publicados e FDT do arquivo 150 |
 | Validação humana | Pendente |
@@ -99,7 +100,7 @@ SA deriva ano/mês da data; S1 combina data + ação; S2 entidade + chave + data
 | PAYMENT para PAYMENT | GH origem para AA pagamento | Relação indicada no dicionário, sem travessia desse campo nos membros lidos: [PAYMENT.ddm:102](legacy-sifap/adabas-ddms/PAYMENT.ddm#L102) |
 | AUDIT para entidades | CA tipo + CB chave; CC CPF auxiliar | Polimórfica e dependente do chamador; conciliação usa número de pagamento: [BATCHCON.NSP:311-343](legacy-sifap/natural-programs/BATCHCON.NSP#L311) |
 
-Não há declaração de chave estrangeira nesses DDMs. Cardinalidades e comportamento de registros órfãos permanecem sujeitos à validação da equipe.
+Não há declaração de chave estrangeira nesses DDMs. Cardinalidades e comportamento de registros órfãos permanecem como perguntas para revisão de paula; o documento não os transforma em decisões de schema.
 
 ## Confronto com a FDT 150
 
@@ -120,8 +121,9 @@ Os números de registros, bytes, compressão e duração de unload são estimati
 - [x] Quatro DDMs e a FDT fornecida foram lidos, incluindo os rodapés.
 - [x] Chaves, tipos, grupos, MU/PE e descritores foram relacionados às origens.
 - [x] Relações observadas foram separadas de vínculos apenas anotados.
-- [ ] A equipe validou domínios divergentes e representações física/lógica.
-- [ ] O DBA mediu a população atual e verificou as definições do ambiente de origem.
+- [x] Divergências de domínio e de representação foram mantidas como perguntas rastreáveis.
+
+**Verificação não realizada:** não houve acesso à população atual nem às definições de um ambiente de origem. Essas medições seriam necessárias para uma migração real, mas não são uma entrega faltante da leitura deste acervo. A aprovação das interpretações cabe a paula na revisão individual.
 
 ### Continue lendo
 

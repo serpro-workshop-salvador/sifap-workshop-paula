@@ -15,6 +15,14 @@
 > [!IMPORTANT]
 > **Gate obrigatório.** Antes de escrever EARS no Estágio 2, a dupla precisa ter lido os programas Natural atribuídos e ter evidência para cada comportamento selecionado. Todo requisito formal seguinte precisa de um `source_legacy:` válido ou de `[GREENFIELD]` com justificativa. O gate não é uma meta de quantidade.
 
+## Execução individual de paula
+
+Nesta execução, paula cobre as cinco áreas e os quinze programas; os horários e a distribuição por duplas abaixo permanecem como referência do formato original da imersão. Não há dependência de outras pessoas para concluir os artefatos.
+
+O [inventário](inventory.md) registra a cobertura integral do acervo e o [relatório de descoberta](discovery-report.md) concentra o fechamento. A leitura assistida e a documentação estão entregues. Perguntas abertas são um resultado da arqueologia, não uma obrigação de resolver o domínio inteiro antes de terminar o estágio.
+
+O H1 individual continua sendo uma conversa guiada: paula revisa as evidências do recorte, informa os IDs que reconheceu, decide o que seguirá e o que será adiado, e registra o aceite no relatório antes da transição para o agente de arquitetura. O assistente não presume esse aceite nem substitui a correspondência dos IDs por respostas inventadas.
+
 ---
 
 ## Objetivo

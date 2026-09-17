@@ -2,11 +2,11 @@
 
 > **Trilha:** [Kit do Time](../README.md) › [Estágio 1](README.md) › **Mapa de Dependências**
 
-**Artefato preenchido pelo time durante o Estágio 1 — Passo 3.** Registra as dependências entre programas Natural e DDMs Adabas que sustentam o escopo selecionado.
+**Mapa da execução individual de paula no Estágio 1.** Registra as dependências dos programas Natural e DDMs Adabas de todo o acervo local.
 
 | Campo | Valor |
 |---|---|
-| **Público-alvo** | Todas as duplas, com liderança da Dupla 2 (Arquitetura) |
+| **Público-alvo** | paula, responsável pela leitura e pela revisão do mapa |
 | **Pré-requisitos** | Catálogo de regras com as origens identificadas |
 | **Estágio** | Estágio 1 — Arqueologia |
 | **Resultado esperado** | Diagrama Mermaid e tabelas de arestas com evidência `arquivo:linha` |
@@ -17,7 +17,7 @@
 > [!NOTE]
 > Guia passo a passo: [`GUIDE.md`](GUIDE.md).
 
-**Time:** a informar pela equipe.
+**Responsável:** paula. **Modalidade:** individual.
 **Data:** 2026-09-17.
 **Escopo:** os 24 membros locais, com rastreamento recursivo e quatro DDMs publicados. Fontes legadas somente para leitura; bibliotecas e ambientes externos não foram acessados.
 
@@ -242,7 +242,9 @@ A ordem SIFAPJ01 antes de SIFAPJ02 e a condição RC=0 pertencem aos comentário
 - [x] Toda aresta está ligada a instrução ativa com arquivo e linha.
 - [x] Destinos locais e definições de sub-rotinas foram conferidos.
 - [x] Diagrama completo gerado com cabeçalho de tema e paleta neutra.
-- [ ] Renderização visual do Mermaid conferida pela equipe; não havia renderizador disponível nesta sessão.
+- [ ] Renderização visual do Mermaid conferida; não havia renderizador disponível nesta sessão.
+
+A conferência visual é uma verificação técnica ainda não realizada, não uma dependência de outra dupla. Os destinos e as contagens foram conferidos por busca; isso não equivale a testar a renderização.
 
 ---
 

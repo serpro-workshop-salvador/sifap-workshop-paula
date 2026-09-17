@@ -6,13 +6,15 @@
 
 | Campo | Valor |
 |---|---|
-| **Público-alvo** | Todas as duplas — preencher durante o Estágio 1 |
+| **Público-alvo** | paula, responsável pelas cinco áreas na execução individual |
 | **Pré-requisitos** | Ler os programas atribuídos |
 | **Estágio** | Estágio 1 — Arqueologia |
 | **Resultado esperado** | Lista de perguntas sem conclusão, com rastreabilidade e responsável |
 
 > [!IMPORTANT]
 > **Gate de rastreabilidade.** Uma pergunta continua em aberto até receber validação humana explícita, apoiada em evidência. Ela não pode virar resposta, regra ou requisito sem essa validação.
+
+**Modalidade desta execução:** individual, por solicitação de paula. A distribuição por duplas abaixo é a referência original do kit; aqui ela organiza cinco áreas de leitura da mesma pessoa. Não é necessário reunir um grupo, delegar programas nem designar outros participantes. A correspondência das perguntas aos IDs canônicos continua sendo uma escolha humana, distinta da resolução das perguntas.
 
 ---
 
@@ -32,11 +34,11 @@ O SIFAP, o Sistema de Fiscalização e Administração de Pagamentos, contém **
 
 Oito dos vinte são **de dois lados**: só contam com as duas evidências (código **e** DDM, ou código **e** documento legado). Comparar fontes não é opcional.
 
-### Onde procurar — por dupla
+### Áreas de leitura
 
 Os rótulos indicam a **área** do mistério, nunca o achado.
 
-| Dupla | Domínio | IDs | Programas |
+| Área do kit | Domínio | IDs | Programas |
 |---|---|---|---|
 | 1 | Cadastro | `M-01` … `M-04` | `CADBENEF`, `CADDEPEN`, `CADPROG` |
 | 2 | Batch | `M-05` … `M-08` | `BATCHPGT`, `BATCHREL`, `BATCHCON` |
@@ -47,34 +49,33 @@ Os rótulos indicam a **área** do mistério, nunca o achado.
 \* `CALCDSCT.NSP` é leitura de apoio para a Dupla 3 — nenhum mistério canônico mora nele. Vale perguntar por que ele existe.
 
 > [!TIP]
-> **Se você ficar travado por mais de 40 minutos, peça uma dica ao facilitador.** Uma dica não custa pontos; continuar travado tira você do exercício.
+> No estudo individual, registre o bloqueio com sua evidência e peça uma leitura guiada do trecho. A falta de outra dupla não impede a investigação; uma interpretação sem suporte continua sendo uma pergunta em aberto.
 
 ---
 
 ## Para cada questão em aberto
 
-- [ ] A pergunta foi registrada sem resposta nem conclusão.
-- [ ] A evidência contém `path:line`.
-- [ ] O impacto foi registrado.
-- [ ] A hipótese está explicitamente marcada como **não confirmada**.
-- [ ] Uma pessoa ou área responsável foi identificada.
-- [ ] O status foi registrado.
+- [x] A pergunta foi registrada sem resposta nem conclusão.
+- [x] A evidência contém caminho e linha de origem.
+- [x] O impacto foi registrado.
+- [x] O campo de hipótese distingue ausência de hipótese de hipótese confirmada.
+- [x] paula está identificada como responsável em cada registro.
+- [x] O status foi registrado como aberto, sem aprovação presumida.
+- [ ] paula forneceu a classificação canônica e as hipóteses que pretende registrar.
 
 ---
 
 ## Estrutura do registro
 
-| Questão em aberto | Evidência (`path:line`) | Impacto | Hipótese (não confirmada) | Pessoa/área responsável | Status |
-|---|---|---|---|---|---|
-| <!-- preencher --> | <!-- preencher: path:line --> | <!-- preencher --> | <!-- preencher: não confirmada --> | <!-- preencher --> | <!-- preencher: aberta / aguardando validação humana / fechada após validação humana --> |
+O [registro preenchido](mysteries-found.md) mantém as colunas ID, pergunta, evidência, impacto, hipótese não confirmada, responsável e status. Não há tabela vazia a preencher em paralelo: a validação individual deve usar esse registro único.
 
 ---
 
-## Placar das cinco duplas
+## Placar individual dos vinte IDs
 
-Revisão assistida em 2026-09-17: os 15 programas atribuídos, nove membros de apoio, quatro DDMs e a FDT fornecida possuem registro de leitura no [inventário](inventory.md). Isso não atribui um achado a um ID canônico. As perguntas estão no [registro](mysteries-found.md), e a pessoa leitora deve estabelecer a correspondência antes de marcar qualquer posição abaixo.
+Revisão assistida em 2026-09-17: os 15 programas atribuídos, nove membros de apoio, quatro DDMs e a FDT fornecida possuem registro de leitura no [inventário](inventory.md). paula responde por todas as linhas. A coluna de evidência associada só pode ser marcada após a escolha do ID correspondente por paula; não é um pedido para outras pessoas realizarem a investigação.
 
-| Dupla | ID canônico | Encontrado pela equipe | Evidência associada no registro |
+| Área do kit | ID canônico | Reconhecido por paula | Evidência associada no registro |
 |---|---|---|---|
 | 1 | `SIFAP-M-01` | [ ] | [ ] |
 | 1 | `SIFAP-M-02` | [ ] | [ ] |
@@ -97,13 +98,16 @@ Revisão assistida em 2026-09-17: os 15 programas atribuídos, nove membros de a
 | 5 | `SIFAP-M-19` | [ ] | [ ] |
 | 5 | `SIFAP-M-20` | [ ] | [ ] |
 
-**Achados adicionais (bônus):** classificação ainda não fornecida pela equipe. A quantidade de perguntas propostas não muda o denominador vinte e não comprova completude dos mistérios.
+**Achados adicionais (bônus):** classificação ainda não fornecida por paula. A quantidade de perguntas propostas não muda o denominador vinte e não comprova completude dos mistérios.
 
-- [ ] Cada dupla confirmou a sua leitura, não apenas a leitura do assistente.
-- [ ] Cada pergunta foi associada a um ID ou classificada como bônus pela pessoa leitora.
-- [ ] Foram designadas pessoas responsáveis e fornecidas hipóteses explicitamente não confirmadas.
-- [ ] Os casos de dois lados possuem as duas evidências conferidas pela equipe.
-- [ ] A conversa H1 e a decisão de escopo foram registradas pela equipe.
+- [x] paula foi identificada como responsável por todas as áreas.
+- [x] O registro contém perguntas e evidências de todo o acervo fornecido.
+- [ ] paula confirmou a leitura assistida e forneceu as associações de IDs.
+- [ ] paula forneceu eventuais hipóteses, sem tratá-las como fatos.
+- [ ] paula conferiu as evidências dos casos de dois lados selecionados.
+- [x] O aceite H1 individual do recorte de consulta de programa por código foi recebido de paula em 2026-09-17 e registrado no [relatório](discovery-report.md#revisão-h1-guiada).
+
+O placar pendente não significa que os arquivos ainda não foram investigados. Significa que a associação canônica ainda não foi informada; o agente não substitui esse dado por uma correspondência inventada.
 
 ---
 
@@ -119,7 +123,7 @@ Nenhuma destas dicas revela um achado — todas são técnicas reutilizáveis de
 6. **Pergunte "quem escreve neste campo?".** Escolha um campo do DDM e encontre todos os programas que escrevem nele. Às vezes a resposta é: nenhum.
 7. **Leia o código comentado.** Blocos desativados revelam o que o sistema já fez — e por que parou.
 8. **Desconfie de `ESCAPE`, de `IF` sem `ELSE` e de atribuição incondicional.** Saídas antecipadas e regras que valem sempre escondem decisões que ninguém registrou.
-9. **Cruze os três programas da dupla.** Vários mistérios só aparecem quando você compara dois arquivos.
+9. **Cruze os programas de cada área.** Vários mistérios só aparecem quando você compara dois arquivos; o trabalho individual não elimina esse confronto.
 
 ---
 

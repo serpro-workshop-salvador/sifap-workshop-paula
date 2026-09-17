@@ -2,15 +2,17 @@
 
 > **Trilha:** [Kit do Time](../README.md) › [Estágio 1](README.md) › **Checklist de Exploração**
 
-**Gate obrigatório antes do Estágio 2.** Este checklist garante que cada dupla leu os programas atribuídos e que as regras candidatas são rastreáveis até o código legado.
+**Gate obrigatório antes do Estágio 2.** Nesta execução individual, paula cobre todos os programas e mantém a rastreabilidade das regras candidatas até o código legado.
 
 | Campo | Valor |
 |---|---|
-| **Público-alvo** | Todas as duplas — preencher durante o Estágio 1 |
+| **Público-alvo** | paula, responsável pelo escopo completo |
 | **Pré-requisitos** | Acesso a `legacy-sifap/natural-programs/` e `adabas-ddms/` |
 | **Tempo estimado** | Preenchido ao longo dos 90 minutos |
 | **Estágio** | Estágio 1 — Arqueologia |
-| **Resultado esperado** | Matriz de leitura completa por dupla e critérios de conclusão verificados |
+| **Resultado esperado** | Cobertura individual de todas as áreas e critérios de conclusão verificáveis |
+
+**Aplicação individual:** as cinco duplas da tabela representam somente a distribuição original dos assuntos. paula acumula os papéis; o H1 é uma revisão guiada entre paula e o agente, com registro da decisão antes de mudar de estágio. Isso não dispensa evidências, não confirma hipóteses e não autoriza o agente a aprovar o estágio em nome da participante.
 
 > [!IMPORTANT]
 > **Gate obrigatório antes do Estágio 2.** Nenhum requisito EARS é aceito sem referência a um programa Natural ou arquivo DDM. Requisitos greenfield (sem equivalente no legado) precisam ser marcados com `[GREENFIELD]` e justificados por escrito na spec.
@@ -34,9 +36,9 @@ O CI rejeita PRs para `develop` se algum `REQ-ID` estiver sem a linha `source_le
 
 ## 2. Os 15 programas Natural — quem lê o quê
 
-Cada dupla recebe 3 programas. Nenhum programa pode ficar sem leitor.
+paula cobre os 15 programas, organizados nos cinco grupos originais. O [inventário](inventory.md) registra a leitura assistida integral, e as [notas de tipos](reading-notes.md) documentam os respectivos DEFINE DATA.
 
-| Dupla | Programas a ler | Mistérios | Por quê |
+| Área original | Programas a ler | Mistérios | Por quê |
 |---|---|---|---|
 | **1 · Visão** (PO + RE) | `CADBENEF.NSP`, `CADDEPEN.NSP`, `CADPROG.NSP` | `SIFAP-M-01` … `M-04` | Lógica de cadastro — entidades centrais que viram sujeitos EARS. |
 | **2 · Arquitetura** (EA + SA) | `BATCHPGT.NSP`, `BATCHREL.NSP`, `BATCHCON.NSP` | `SIFAP-M-05` … `M-08` | Fluxos batch revelam fronteiras de módulo (bounded contexts). |
@@ -49,15 +51,15 @@ Cada dupla recebe 3 programas. Nenhum programa pode ficar sem leitor.
 > [!IMPORTANT]
 > **São 20 mistérios canônicos, 4 por dupla** — essa é a única meta numérica do Estágio 1. Os IDs e as áreas estão em [`mysteries-checklist.md`](mysteries-checklist.md); registre-os em [`mysteries-found.md`](mysteries-found.md). Achados fora da lista contam como bônus e **não** mudam o denominador.
 
-### Checklist para cada programa
+### Conferência documental por programa
 
-Para cada programa atribuído à sua dupla, registre notas de leitura suficientes para confirmar que ele foi examinado:
+As fontes e seus cabeçalhos permanecem somente para leitura. Para cada programa, os artefatos de apoio são:
 
-- [ ] **Identifique o programa.** Registre nome, autor e ano da última modificação a partir do cabeçalho do próprio membro. Resolva o autor no [índice de nomes](legacy-sifap/CHRONOLOGY.md#6-índice-canônico-de-nomes) antes de atribuir qualquer coisa a uma pessoa: as linhas de alteração usam formas abreviadas e duas pessoas podem compartilhar o mesmo primeiro nome.
-- [ ] **Mapeie as entradas.** Quais DDMs ele lê.
-- [ ] **Mapeie as saídas.** Quais DDMs ele escreve.
-- [ ] **Registre as chamadas.** Outros programas chamados por `CALLNAT`.
-- [ ] **Catalogue as regras candidatas.** Quando o programa contiver uma regra relevante ao escopo, registre-a em `business-rules-catalog.md` com `Programa de origem` e intervalo de linhas.
+- [x] **Identificação e leitura:** os 24 membros estão no [inventário](inventory.md); autoria e datas são consultadas na [cronologia](legacy-sifap/CHRONOLOGY.md), sem atribuições inferidas pelo primeiro nome.
+- [x] **Entradas e saídas:** o [mapa de dependências](dependency-map.md) distingue as operações efetivas por DDM das views apenas declaradas.
+- [x] **Chamadas:** o mapa registra `CALLNAT`, `INCLUDE`, `USING`, rotinas internas e JCLs com suas origens.
+- [x] **Regras candidatas:** o [catálogo](business-rules-catalog.md) contém as quinze seções de programas com evidência e classificação.
+- [ ] **Aceite da leitura:** paula confirmou a revisão das evidências necessárias ao recorte escolhido.
 
 > [!WARNING]
 > Uma linha sem `Programa de origem` não sustenta um requisito EARS.
@@ -66,14 +68,14 @@ Para cada programa atribuído à sua dupla, registre notas de leitura suficiente
 
 ## 3. Os 4 DDMs — mapeamento de campos
 
-A Dupla 4 (DBA + QA) lidera. Todas as outras duplas contribuem com revisões.
+paula responde pela leitura dos dados e pelo confronto com os programas. O planejamento do destino continua pertencendo aos estágios seguintes.
 
-| DDM | Responsável | Artefato-alvo no PostgreSQL |
+| DDM | Responsável | Evidência do Estágio 1 |
 |---|---|---|
-| `BENEFIC.ddm` | Dupla 4 | <!-- definir a partir da evidência --> |
-| `PAYMENT.ddm` | Dupla 4 | <!-- definir a partir da evidência --> |
-| `SOCPROG.ddm` | Dupla 4 | <!-- definir a partir da evidência --> |
-| `AUDIT.ddm` | Dupla 4 | <!-- definir a partir da evidência --> |
+| BENEFIC | paula | [Mapa de dados](data-map.md#estruturas-de-benefic), incluindo confronto com a FDT |
+| PAYMENT | paula | [Mapa de dados](data-map.md#estruturas-de-payment) |
+| SOCPROG | paula | [Mapa de dados](data-map.md#estruturas-de-socprog) |
+| AUDIT | paula | [Mapa de dados](data-map.md#estruturas-de-audit) |
 
 Revise os DDMs necessários à feature selecionada. O mapeamento completo para PostgreSQL pertence ao planejamento e à implementação; não é pré-requisito para começar a spec.
 
@@ -100,15 +102,17 @@ Uma questão só pode ser fechada ou usada como base para uma regra depois de va
 
 ## 5. Verificação antes de abrir o Estágio 2
 
-Por volta das 13:50, um facilitador confere o trabalho da dupla contra esta matriz. Uma linha vermelha bloqueia a passagem para o Estágio 2.
+Na revisão H1 individual, paula confere esta matriz com o apoio do agente. A inexistência de grupo não é um bloqueio; ausência de evidência ou aprovação não recebida continua registrada como tal.
 
-| Verificação | Critério do gate |
-|---|---|
-| Leitura atribuída | Cada dupla confirmou a leitura dos três programas que recebeu. |
-| Cronologia | Toda data ou autoria que a dupla registrou cita uma linha de cabeçalho, e cada discordância com um documento de época é registrada como achado, em vez de conciliada em silêncio. |
-| Catálogo de regras | Toda regra candidata dentro do escopo tem `Programa de origem` preenchido. |
-| Escopo | O relatório de descoberta identifica uma feature pequena e o que foi adiado. |
-| Questões em aberto | As incertezas relevantes foram registradas sem virar requisitos. |
+| Verificação | Evidência atual | Aceite |
+|---|---|---|
+| Leitura | Acervo completo coberto no inventário e nas notas | Confirmação individual de paula pendente |
+| Cronologia | Cronologia canônica vinculada; divergências mantidas no registro | Não foram criadas datas ou autorias para preencher lacunas |
+| Regras | Quinze seções com origens e classificações no catálogo | Conteúdo documental entregue; regras não aprovadas automaticamente |
+| Escopo | Consulta de programa por código selecionada, com adiamentos explícitos | Aceite de paula em 2026-09-17, registrado no [relatório](discovery-report.md#revisão-h1-guiada) |
+| Questões | Perguntas, evidências e responsável individual registrados | Não é necessário resolver todas para documentar a descoberta; os IDs não podem ser inventados |
+
+Verificações de execução Natural, medidas da população atual e desenho PostgreSQL não fazem parte da conclusão documental desta arqueologia. A renderização Mermaid e a paginação impressa continuam como verificações técnicas não realizadas, sem substituir o conteúdo já conferido por leitura.
 
 ---
 

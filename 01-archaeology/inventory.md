@@ -1,4 +1,4 @@
-# Inventário do Legado — Time `paula`
+# Inventário do Legado: paula
 
 > **Trilha:** [Kit do Time](../README.md) › [Estágio 1](README.md) › **Inventário**
 
@@ -6,7 +6,7 @@
 
 | Campo | Valor |
 |---|---|
-| **Público-alvo** | Dupla responsável pela varredura inicial |
+| **Público-alvo** | paula, responsável pelo estudo individual de todas as áreas |
 | **Pré-requisitos** | Acesso ao diretório `legacy-sifap/` |
 | **Estágio** | Estágio 1 — Arqueologia, Passo 1 |
 | **Resultado esperado** | Contagens corretas, padrões de nomenclatura identificados e 3 itens estranhos sinalizados |
@@ -15,12 +15,15 @@
 > O kickoff foi realizado apenas por nomes e estrutura. O catálogo ao final foi acrescentado depois da leitura dos fontes; não infira que uma hipótese inicial de nomenclatura foi confirmada como regra de negócio.
 
 **Data:** 2026-09-17
-**Dupla responsável:** `<preencher>`
+**Responsável:** paula
+**Modalidade:** individual, cobrindo as cinco áreas do kit
 **Caminho varrido:** `01-archaeology/legacy-sifap/`
 
 As seções de contagem e nomenclatura preservam a primeira análise. A seção de
-cobertura registra a revisão estática posterior, sem substituir a leitura e a
-validação humana exigidas no handoff.
+cobertura registra a revisão estática posterior. As antigas duplas são apenas
+agrupamentos de assunto nesta execução; nenhum arquivo depende de outra pessoa
+para ser investigado. A revisão humana e a escolha do recorte do H1 cabem a paula,
+com o apoio do agente, sem simular aprovação já recebida.
 
 ---
 
@@ -110,7 +113,7 @@ rastreamento de `CALLNAT`, `INCLUDE`, `USING` e dos JCLs revelar outras dependê
 
 As finalidades são hipóteses de uma linha apoiadas no cabeçalho e no corpo lido, não especificações aprovadas. Datas e autoria permanecem na [cronologia canônica](legacy-sifap/CHRONOLOGY.md). O intervalo de leitura inclui início do arquivo até `END`; as regras condicionais estão em [business-rules-catalog.md](business-rules-catalog.md).
 
-| Dupla | Membro | Hipótese de finalidade | Leitura integral | DEFINE DATA |
+| Área do kit | Membro | Hipótese de finalidade | Leitura integral | DEFINE DATA |
 |---|---|---|---|---|
 | 1 | [CADBENEF.NSP](legacy-sifap/natural-programs/CADBENEF.NSP) | Manter cadastro por inclusão e alteração | 1-430 | 13-104 |
 | 1 | [CADDEPEN.NSP](legacy-sifap/natural-programs/CADDEPEN.NSP) | Acrescentar dependentes ao grupo do titular | 1-247 | 12-82 |
@@ -156,7 +159,7 @@ As finalidades são hipóteses de uma linha apoiadas no cabeçalho e no corpo li
 
 **Cobertura estática:** 15/15 atribuídos, 9/9 de apoio, 4/4 DDMs e 1/1 FDT fornecida. Isto não é prova de execução, equivalência, completude do ambiente de produção nem validação dos 20 mistérios canônicos.
 
-**Ordem de revisão após a leitura:** conferir o [grafo](dependency-map.md), confrontar as perguntas com o [mapa de dados](data-map.md), validar vocabulário no [glossário](glossary.md) e registrar a decisão humana no [relatório](discovery-report.md). A equipe conserva o registro dos programas que cada pessoa efetivamente leu.
+**Ordem de revisão após a leitura:** conferir o [grafo](dependency-map.md), confrontar as perguntas com o [mapa de dados](data-map.md), revisar o vocabulário no [glossário](glossary.md) e registrar a decisão de paula no [relatório](discovery-report.md). Esta é a revisão H1 individual guiada; não há passagem de trabalho a outra dupla.
 
 ## Conferência reproduzível
 
@@ -176,7 +179,9 @@ Os comandos acima são uma referência para revisão; não foram executados nest
 - [x] 3 itens estranhos sinalizados.
 - [x] Os 24 membros possuem hipótese de finalidade e registro de leitura estática.
 - [x] Os quatro DDMs e a FDT possuem mapa de dados de apoio.
-- [ ] A equipe confirmou sua própria leitura e as associações de mistérios canônicos.
+- [x] paula está identificada como responsável por todo o escopo, em modalidade individual.
+- [x] Aceite H1 do recorte de consulta de programa por código recebido de paula em 2026-09-17 e registrado no [relatório](discovery-report.md#revisão-h1-guiada).
+- [ ] paula forneceu as associações de mistérios canônicos.
 
 ---
 

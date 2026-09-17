@@ -2,11 +2,11 @@
 
 > **Trilha:** [Kit do Time](../README.md) › [Estágio 1](README.md) › **Glossário**
 
-**Artefato preenchido pelo time durante o Estágio 1.** Uma tabela com todos os termos, abreviações e siglas encontrados no código Natural/Adabas — a base da linguagem ubíqua para o Estágio 2.
+**Glossário da execução individual de paula no Estágio 1.** Registra os termos selecionados na leitura Natural/Adabas e separa significados literais de interpretações ainda não validadas.
 
 | Campo | Valor |
 |---|---|
-| **Público-alvo** | Todas as duplas — cada dupla contribui com os termos dos seus programas |
+| **Público-alvo** | paula, responsável pela revisão de todas as áreas |
 | **Pré-requisitos** | Abrir os arquivos `.NSN` e `.ddm` atribuídos |
 | **Estágio** | Estágio 1 — Arqueologia |
 | **Resultado esperado** | 30 termos ou mais, com programa de origem e status CONFIRMADO/HIPÓTESE |
@@ -57,10 +57,10 @@ Compare a sugestão do Copilot com o que você observou diretamente no código. 
 | 5 | COD-PROGRAM | Código de programa social | [SOCPROG.ddm:28](legacy-sifap/adabas-ddms/SOCPROG.ddm#L28) | A4 único na tabela de programas | CONFIRMADO |
 | 6 | GRP-DEPEND | Grupo de dependentes | [BENEFIC.ddm:87](legacy-sifap/adabas-ddms/BENEFIC.ddm#L87) | Grupo periódico de dez ocorrências; capacidade não equivale ao limite de negócio | CONFIRMADO |
 | 7 | QTY-DEPEND | Quantidade de dependentes ativos | [BENEFIC.ddm:81](legacy-sifap/adabas-ddms/BENEFIC.ddm#L81) | Descrição do campo N2; concordância com as ocorrências precisa ser verificada | CONFIRMADO |
-| 8 | RELATION | Código de parentesco | [BENEFIC.ddm:91-92](legacy-sifap/adabas-ddms/BENEFIC.ddm#L91), [CADDEPEN.NSP:152-156](legacy-sifap/natural-programs/CADDEPEN.NSP#L152) | Conjuntos de códigos divergem; validar com a Dupla 1 | HIPÓTESE |
+| 8 | RELATION | Código de parentesco | [BENEFIC.ddm:91-92](legacy-sifap/adabas-ddms/BENEFIC.ddm#L91), [CADDEPEN.NSP:152-156](legacy-sifap/natural-programs/CADDEPEN.NSP#L152) | Conjuntos de códigos divergem; revisão de paula na área de cadastro | HIPÓTESE |
 | 9 | AMT-FAMILY-INCOME | Renda familiar declarada | [BENEFIC.ddm:78](legacy-sifap/adabas-ddms/BENEFIC.ddm#L78) | Valor total em decimal compactado, distinto do campo per capita | CONFIRMADO |
 | 10 | IND-PERCAP-INCOME | Renda per capita calculada | [BENEFIC.ddm:79-80](legacy-sifap/adabas-ddms/BENEFIC.ddm#L79) | O DDM distingue membros da família, renda total e renda per capita | CONFIRMADO |
-| 11 | COD-REGION | Código de região | [BENEFIC.ddm:66](legacy-sifap/adabas-ddms/BENEFIC.ddm#L66), [LDASIFAP.NSL:34-46](legacy-sifap/natural-programs/LDASIFAP.NSL#L34) | DDM e tabelas locais têm domínios distintos; validar com duplas 2 e 4 | HIPÓTESE |
+| 11 | COD-REGION | Código de região | [BENEFIC.ddm:66](legacy-sifap/adabas-ddms/BENEFIC.ddm#L66), [LDASIFAP.NSL:34-46](legacy-sifap/natural-programs/LDASIFAP.NSL#L34) | DDM e tabelas locais têm domínios distintos; revisão de paula nas áreas batch e dados | HIPÓTESE |
 | 12 | IND-DOCS-OK | Indicador de documentação regular | [BENEFIC.ddm:83](legacy-sifap/adabas-ddms/BENEFIC.ddm#L83), [VALELEG.NSN:196-200](legacy-sifap/natural-programs/VALELEG.NSN#L196) | Valores S/N; responsabilidade de preenchimento ainda em aberto | HIPÓTESE |
 | 13 | AMT-BASE-INDIVIDUAL | Base mensal por pessoa | [SOCPROG.ddm:41](legacy-sifap/adabas-ddms/SOCPROG.ddm#L41) | Campo P7,2 usado no cálculo; o cadastro aplica ajuste antes de gravá-lo | CONFIRMADO |
 | 14 | FACTOR-ADJUST | Fator de ajuste sobre a base | [SOCPROG.ddm:52](legacy-sifap/adabas-ddms/SOCPROG.ddm#L52) | Campo BH, distinto de BG FACTOR-K | CONFIRMADO |
@@ -72,12 +72,12 @@ Compare a sugestão do Copilot com o que você observou diretamente no código. 
 | 20 | AMT-DISC-TOTAL | Total de descontos | [PAYMENT.ddm:45](legacy-sifap/adabas-ddms/PAYMENT.ddm#L45) | Campo P7,2; possui precisão diferente do bruto | CONFIRMADO |
 | 21 | AMT-NET | Valor líquido | [PAYMENT.ddm:44](legacy-sifap/adabas-ddms/PAYMENT.ddm#L44) | Descrito como bruto menos desconto; não é cálculo automático demonstrado pelo DDM | CONFIRMADO |
 | 22 | AMT-BONUS | Valor adicional/abono | [PAYMENT.ddm:46](legacy-sifap/adabas-ddms/PAYMENT.ddm#L46) | Campo de valor, separado do tipo do pagamento | CONFIRMADO |
-| 23 | TYPE-PAYMENT | Tipo de pagamento | [PAYMENT.ddm:79-80](legacy-sifap/adabas-ddms/PAYMENT.ddm#L79), [PDACALC.NSA:75](legacy-sifap/natural-programs/PDACALC.NSA#L75) | N/R/A/C no DDM e N/D/T na PDA; validar com duplas 2, 3 e 4 | HIPÓTESE |
+| 23 | TYPE-PAYMENT | Tipo de pagamento | [PAYMENT.ddm:79-80](legacy-sifap/adabas-ddms/PAYMENT.ddm#L79), [PDACALC.NSA:75](legacy-sifap/natural-programs/PDACALC.NSA#L75) | N/R/A/C no DDM e N/D/T na PDA; revisão de paula nas áreas de pagamentos e dados | HIPÓTESE |
 | 24 | GRP-DISC | Descontos discriminados | [PAYMENT.ddm:50-56](legacy-sifap/adabas-ddms/PAYMENT.ddm#L50) | PE de oito itens com tipo, valor, percentual, processo e vigência | CONFIRMADO |
 | 25 | COD-BANK-RETURN | Código de retorno bancário | [PAYMENT.ddm:98](legacy-sifap/adabas-ddms/PAYMENT.ddm#L98) | A2, descrito como retorno CNAB 240 | CONFIRMADO |
 | 26 | IND-CORR | Indicador de correção | [PAYMENT.ddm:105](legacy-sifap/adabas-ddms/PAYMENT.ddm#L105), [CALCCORR.NSP:186-188](legacy-sifap/natural-programs/CALCCORR.NSP#L186) | S/N; o caminho de correção ignora registros já marcados S | CONFIRMADO |
 | 27 | NUM-AUDIT | Número de evento de auditoria | [AUDIT.ddm:31](legacy-sifap/adabas-ddms/AUDIT.ddm#L31) | Sequência N15 única | CONFIRMADO |
-| 28 | COD-ACTION | Natureza do evento | [AUDIT.ddm:39-49](legacy-sifap/adabas-ddms/AUDIT.ddm#L39), [RELAUDIT.NSP:163-182](legacy-sifap/natural-programs/RELAUDIT.NSP#L163) | CO/CN/DV têm usos divergentes; validar com duplas 2 e 5 | HIPÓTESE |
+| 28 | COD-ACTION | Natureza do evento | [AUDIT.ddm:39-49](legacy-sifap/adabas-ddms/AUDIT.ddm#L39), [RELAUDIT.NSP:163-182](legacy-sifap/natural-programs/RELAUDIT.NSP#L163) | CO/CN/DV têm usos divergentes; revisão de paula nas áreas de conciliação e relatórios | HIPÓTESE |
 | 29 | COD-PROFILE | Perfil do usuário | [AUDIT.ddm:76](legacy-sifap/adabas-ddms/AUDIT.ddm#L76) | ADM/OPR/CON/AUD/SUP; existência não comprova preenchimento | CONFIRMADO |
 | 30 | GRP-BEFORE / GRP-AFTER | Grupos de valores anterior e posterior | [AUDIT.ddm:61-70](legacy-sifap/adabas-ddms/AUDIT.ddm#L61) | Grupos simples com listas MU; valores escalares coexistem | CONFIRMADO |
 | 31 | DDM | Data Definition Module | [BENEFIC.ddm:31-34](legacy-sifap/adabas-ddms/BENEFIC.ddm#L31) | Visão lógica com nomes longos usada por Natural | CONFIRMADO |
@@ -88,7 +88,7 @@ Compare a sugestão do Copilot com o que você observou diretamente no código. 
 | 36 | PDA | Área de dados de parâmetros | [PDAVALID.NSA:43-57](legacy-sifap/natural-programs/PDAVALID.NSA#L43) | Contrato compartilhado de entradas e saídas, não uma rotina executável | CONFIRMADO |
 
 > [!NOTE]
-> Nesta tabela, CONFIRMADO significa apenas significado literal sustentado pelo acervo. Não aprova uma regra de negócio nem encerra um mistério. As HIPÓTESES requerem validação humana; as duplas citadas indicam o papel responsável pela revisão, não uma aprovação já obtida.
+> Nesta tabela, CONFIRMADO significa apenas significado literal sustentado pelo acervo. Não aprova uma regra de negócio nem encerra um mistério. paula é responsável pela revisão de todas as HIPÓTESES; trabalhar individualmente não transforma uma hipótese em fato.
 
 ---
 
@@ -98,7 +98,7 @@ Compare a sugestão do Copilot com o que você observou diretamente no código. 
 - [x] Todo termo tem fonte e linha de origem.
 - [x] Todo termo tem status CONFIRMADO ou HIPÓTESE.
 - [x] As hipóteses estão explicitamente encaminhadas à validação humana.
-- [ ] A equipe aprovou o vocabulário para uso no Estágio 2.
+- [ ] paula aprovou o vocabulário necessário ao recorte do Estágio 2.
 
 ---
 

@@ -2,11 +2,11 @@
 
 > **Trilha:** [Kit do Time](../README.md) › [Estágio 1](README.md) › **Catálogo de Regras de Negócio**
 
-**Artefato preenchido pelo time durante o Estágio 1.** Cada dupla extrai as regras dos programas `.NSP` e `.NSN` que recebeu e as registra aqui, com rastreabilidade obrigatória até o programa de origem.
+**Catálogo da execução individual de paula no Estágio 1.** Abrange todos os programas atribuídos e suas dependências, com rastreabilidade até o programa de origem. As áreas do kit organizam a leitura, não distribuem trabalho entre pessoas.
 
 | Campo | Valor |
 |---|---|
-| **Público-alvo** | Todas as duplas — cada dupla preenche a seção dos seus programas |
+| **Público-alvo** | paula, cobrindo todas as áreas de negócio e técnicas |
 | **Pré-requisitos** | Ler os programas `.NSP` e `.NSN` atribuídos |
 | **Estágio** | Estágio 1 — Arqueologia |
 | **Resultado esperado** | Catálogo com `Programa de origem` preenchido para cada regra candidata |
@@ -17,17 +17,17 @@
 > [!IMPORTANT]
 > Guia passo a passo: [`GUIDE.md`](GUIDE.md).
 
-**Time:** a informar pela equipe. **Revisão estática:** 2026-09-17.
+**Responsável:** paula. **Modalidade:** individual. **Revisão estática:** 2026-09-17.
 
 Neste artefato, **Confirmada** significa apenas corroboração documental do enunciado restrito, não aprovação humana nem prova de execução. **Inferida** descreve o fluxo lido; **Mistério** mantém uma pergunta aberta. Candidatos EARS são rótulos de preparação, sem REQ-ID e sem requisitos formais do Estágio 2. As notas de todos os `DEFINE DATA` estão em [reading-notes.md](reading-notes.md), e os campos dos DDMs/FDT em [data-map.md](data-map.md).
 
-Os números das linhas do catálogo são identificadores locais de itens, não `SIFAP-M-NN`. As perguntas devem ser relacionadas aos IDs canônicos pela pessoa leitora. Não use a quantidade de itens como placar dos vinte mistérios.
+Os números das linhas do catálogo são identificadores locais de itens, não `SIFAP-M-NN`. A correspondência com os IDs canônicos cabe a paula, conforme o prompt de registro de mistérios. Não use a quantidade de itens como placar dos vinte mistérios. Manter uma pergunta aberta é uma saída válida da arqueologia; ela só não pode ser promovida a requisito sem validação.
 
 ---
 
 ## Regras de `CADBENEF.NSP`
 
-**Dupla:** 1 · Visão (cadastro) · **Lido em:** 2026-09-17 · **Documentação confrontada:** `legacy-docs/BUSINESS-RULES-2012.md`
+**Área do kit:** 1, cadastro. **Responsável:** paula. **Lido em:** 2026-09-17. **Documentação confrontada:** [legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md).
 
 Cabeçalho do membro: autor CARLOS ROBERTO DA SILVA, criado em 15/03/1997, última alteração registrada em 12/09/2012 (`CADBENEF.NSP:1-12`).
 
@@ -72,13 +72,13 @@ Registradas como achado, não como correção. O levantamento é documento de é
 | Nomes de campo `BN-*` usados no documento | A view usa `NUM-CPF`, `STAT-BENEFICIARY`, `QTY-DEPEND`, `COD-REGION` | `CADBENEF.NSP:16-36` |
 
 > [!NOTE]
-> Duplique a seção acima para cada programa `.NSP` ou `.NSN` lido pela sua dupla.
+> As seções seguintes cobrem os demais programas; não há leituras delegadas a outras duplas nesta execução.
 
 ---
 
 ## Leitura de dependências de `CADBENEF.NSP`
 
-Foram lidos cinco membros de apoio e `VALBENEF.NSN`, programa atribuído à Dupla 4. `CCVALCPF.NSC` é uma dependência indireta, incluída por `SUBVALCP.NSN`. Esta leitura estática não representa validação humana das regras nem conclusão da leitura atribuída à Dupla 4.
+Na primeira passagem foram lidos cinco membros de apoio e `VALBENEF.NSN`, pertencente à área de validação. `CCVALCPF.NSC` é uma dependência indireta, incluída por `SUBVALCP.NSN`. A leitura integral posterior de todas as áreas está no [inventário](inventory.md); isso não substitui a decisão humana sobre regras divergentes.
 
 | Membro | Como é referenciado | Linha em `CADBENEF.NSP` |
 |---|---|---|
@@ -466,7 +466,7 @@ Os itens abaixo completam a leitura dos ramos técnicos e dos subprogramas locai
 | DDMs/FDT | 4 de 4 DDMs e 1 de 1 FDT fornecida; confronto em data-map.md |
 | Itens numerados | 196 entradas, incluindo confrontos, complementos e a retificação explícita do item 26; não são 196 regras distintas |
 | Corroboração documental restrita | 3 itens: 2, 4 e 7; não equivalem a requisitos aprovados |
-| Questões canônicas | Nenhum ID foi validado pela equipe nesta sessão; não existe comprovação de 20/20 |
+| Questões canônicas | A correspondência das evidências aos IDs aguarda paula; não existe comprovação de 20/20 |
 | Validação humana | Pendente; nenhuma pergunta foi encerrada |
 
 ---
@@ -476,8 +476,11 @@ Os itens abaixo completam a leitura dos ramos técnicos e dos subprogramas locai
 - [x] Blocos condicionais, alternativas e caminhos de erro dos 15 programas foram examinados na leitura estática.
 - [x] Entradas possuem referência de origem; prefixos antigos sem diretório resolvem para os membros únicos do inventário.
 - [x] Tipos e dimensões foram registrados nas notas de leitura.
-- [ ] A equipe validou as perguntas e sua correspondência aos IDs canônicos.
-- [ ] A execução Natural confirmou conversões, cursores e transações; nenhuma execução foi realizada nesta sessão.
+- [x] Todas as áreas têm uma responsável identificada: paula.
+- [x] Aceite H1 do recorte de consulta de programa por código registrado em 2026-09-17 no [relatório](discovery-report.md#revisão-h1-guiada), sem promoção automática de regras.
+- [ ] paula forneceu a correspondência das evidências aos IDs canônicos.
+
+**Limite de verificação, não uma tarefa de extração faltante:** não foram executados programas Natural. Conversões, cursores e transações estão descritos a partir das fontes; sua confirmação em runtime pertence à caracterização posterior e não é inferida do lint.
 
 ---
 

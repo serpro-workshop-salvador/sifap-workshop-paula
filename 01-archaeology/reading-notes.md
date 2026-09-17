@@ -7,6 +7,7 @@
 | Campo | Valor |
 |---|---|
 | Data | 2026-09-17 |
+| Responsável | paula, execução individual de todas as áreas |
 | Escopo | Declarações dos 22 membros Natural; JCLs documentados no mapa de dependências |
 | Formatos | A: alfanumérico; N: numérico; P: compactado; L: lógico; intervalos indicam arrays |
 | Fontes persistidas | As projeções de view estão nas faixas DEFINE DATA citadas; campos, formatos e domínios completos por família estão em [data-map.md](data-map.md) |
@@ -387,7 +388,8 @@ Fonte: [RELAUDIT.NSP:18-66](legacy-sifap/natural-programs/RELAUDIT.NSP#L18). Inc
 - [x] Tipos, comprimentos e dimensões dos parâmetros e variáveis de trabalho foram registrados.
 - [x] Campos compartilhados têm contrato explícito e chamadores identificados.
 - [x] Views apenas declaradas foram diferenciadas de acessos efetivos.
-- [ ] Conversões numéricas, comportamento de cursores e efeitos transacionais foram verificados em runtime Natural; não há execução disponível nesta sessão.
+
+**Limite da leitura:** conversões numéricas, cursores e transações não foram testados em runtime Natural. A documentação desta etapa está preenchida; essa limitação acompanha as perguntas para a caracterização posterior, sem simular um teste executado.
 
 ### Continue lendo
 
