@@ -17,7 +17,11 @@
 > [!IMPORTANT]
 > Guia passo a passo: [`GUIDE.md`](GUIDE.md).
 
-**Time**: <!-- preencher -->
+**Time:** a informar pela equipe. **Revisão estática:** 2026-09-17.
+
+Neste artefato, **Confirmada** significa apenas corroboração documental do enunciado restrito, não aprovação humana nem prova de execução. **Inferida** descreve o fluxo lido; **Mistério** mantém uma pergunta aberta. Candidatos EARS são rótulos de preparação, sem REQ-ID e sem requisitos formais do Estágio 2. As notas de todos os `DEFINE DATA` estão em [reading-notes.md](reading-notes.md), e os campos dos DDMs/FDT em [data-map.md](data-map.md).
+
+Os números das linhas do catálogo são identificadores locais de itens, não `SIFAP-M-NN`. As perguntas devem ser relacionadas aos IDs canônicos pela pessoa leitora. Não use a quantidade de itens como placar dos vinte mistérios.
 
 ---
 
@@ -30,28 +34,28 @@ Cabeçalho do membro: autor CARLOS ROBERTO DA SILVA, criado em 15/03/1997, últi
 | # | Enunciado da regra | Candidato EARS | Origem | Classificação | Notas |
 |---|---|---|---|---|---|
 | 1 | SE a operação informada não for `I` nem `A`, ENTÃO o sistema DEVE recusar a entrada e encerrar o fluxo | Indesejada | `CADBENEF.NSP:139-143` | Inferida | Sem correspondência no levantamento de 2012 |
-| 2 | SE o CPF informado for zero, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | `CADBENEF.NSP:145-149` | Confirmada | RN-001, §1.1, exige CPF válido |
-| 3 | O sistema DEVE validar o CPF pelo algoritmo de módulo 11 com dois dígitos verificadores | Ubíqua | `CADBENEF.NSP:152`, `CADBENEF.NSP:344-413` | Confirmada | RN-001, §1.1. O documento cita o subprograma `VALCPF`; o código usa rotina interna `VALID-CPF` |
-| 4 | SE o dígito verificador do CPF não conferir, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | `CADBENEF.NSP:164-168` | Confirmada | RN-001, §1.1 |
-| 5 | O resultado da validação corporativa de CPF não altera o fluxo | — | `CADBENEF.NSP:153-168` | Mistério | <!-- mystery: CALLNAT 'SUBVALCP' é executado, mas #PV-COD-RETURN nunca é testado; a decisão em L164 usa #CPF-VALID, que só a rotina interna atribui. Confirmar se a chamada corporativa é efetivamente inócua --> |
+| 2 | SE o CPF informado for zero, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | [CADBENEF.NSP:145-149](legacy-sifap/natural-programs/CADBENEF.NSP#L145) | Confirmada | Corroboração restrita da obrigatoriedade de CPF válido em [RN-001, seção 1.1](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L72); não confirma a equivalência dos validadores |
+| 3 | Qual validação de CPF deve ser tomada como referência diante das implementações diferentes? | Não promover | [CADBENEF.NSP:344-413](legacy-sifap/natural-programs/CADBENEF.NSP#L344), [CCVALCPF.NSC:39-130](legacy-sifap/natural-programs/CCVALCPF.NSC#L39) | Mistério | <!-- mystery: A documentação exige CPF válido, mas não comprova a equivalência das implementações locais e do copycode --> |
+| 4 | SE a validação local sinalizar CPF inválido, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | [CADBENEF.NSP:164-168](legacy-sifap/natural-programs/CADBENEF.NSP#L164) | Confirmada | Corroboração restrita da rejeição de CPF inválido em [RN-001, seção 1.1](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L72), sem aprovar o algoritmo local |
+| 5 | Como o cadastro deve usar o diagnóstico corporativo de CPF, já que a decisão seguinte testa o indicador local? | Não promover | [CADBENEF.NSP:153-168](legacy-sifap/natural-programs/CADBENEF.NSP#L153) | Mistério | <!-- mystery: Qual efeito o retorno de SUBVALCP deve ter na decisão do cadastro? --> |
 | 6 | SE o nome estiver em branco, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | `CADBENEF.NSP:170-174` | Inferida | Sem correspondência no levantamento de 2012 |
-| 7 | SE a data de nascimento for zero, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | `CADBENEF.NSP:176-180` | Confirmada | RN-006, §1.1, declara a data de nascimento obrigatória |
-| 8 | Não há verificação de idade mínima na inclusão | — | `CADBENEF.NSP:176-180` | Mistério | <!-- mystery: RN-006 exige recusar menores de 16 anos, mas a única verificação sobre a data de nascimento é a de preenchimento. Confirmar se a regra vive em outro membro ou nunca foi implementada --> |
+| 7 | SE a data de nascimento for zero, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | [CADBENEF.NSP:176-180](legacy-sifap/natural-programs/CADBENEF.NSP#L176) | Confirmada | Corroboração somente da obrigatoriedade em [RN-006, seção 1.1](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L91), não da idade mínima nem da validade do calendário |
+| 8 | Onde deve ser aplicada a idade mínima de inclusão mencionada em RN-006? | Não promover | [CADBENEF.NSP:176-180](legacy-sifap/natural-programs/CADBENEF.NSP#L176), [CADBENEF.NSP:241-268](legacy-sifap/natural-programs/CADBENEF.NSP#L241), [RN-006:91](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L91) | Mistério | <!-- mystery: A regra de idade mínima deve bloquear o cadastro ou apenas a elegibilidade de programas específicos? --> |
 | 9 | SE o sexo informado não for `M` nem `F`, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | `CADBENEF.NSP:182-186` | Inferida | Sem correspondência no levantamento de 2012 |
-| 10 | ONDE a validação de NIS retornar código diferente de zero, o sistema DEVE emitir aviso e prosseguir com a gravação | Opcional | `CADBENEF.NSP:188-201` | Mistério | <!-- mystery: RN-001 trata o NIS como validação obrigatória, mas o código apenas emite WRITE de aviso e não bloqueia. O comentário diz 'modo aviso pendente de revisão' desde 2011; confirmar se a revisão ocorreu --> |
-| 11 | A verificação de existência marca o beneficiário como encontrado | — | `CADBENEF.NSP:206-211` | Mistério | <!-- mystery: MOVE TRUE TO #FOUND está após END-NOREC, dentro do corpo do FIND. Confirmar com pessoa especialista em Natural se #FOUND pode terminar TRUE mesmo sem registro, o que inverteria as regras 12 e 13 --> |
-| 12 | SE a operação for inclusão e já existir registro com o mesmo CPF, ENTÃO o sistema DEVE recusar o cadastro | Indesejada | `CADBENEF.NSP:213-217` | Confirmada | RN-002, §1.1. Divergência: o documento restringe o bloqueio à situação ativa e permite reinclusão de excluído lógico; o código não consulta `STAT-BENEFICIARY` |
+| 10 | O retorno inválido de NIS deve impedir a gravação ou somente gerar aviso? | Não promover | [CADBENEF.NSP:188-201](legacy-sifap/natural-programs/CADBENEF.NSP#L188), [RN-001:72](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L72) | Mistério | <!-- mystery: Qual é a política de bloqueio para o diagnóstico de NIS? --> |
+| 11 | Qual valor de `#FOUND` resulta do caminho sem registros, após `END-NOREC`? | Não promover | [CADBENEF.NSP:206-211](legacy-sifap/natural-programs/CADBENEF.NSP#L206) | Mistério | <!-- mystery: A execução Natural preserva o indicador de ausência neste FIND? --> |
+| 12 | O bloqueio de duplicidade deve considerar a situação do cadastro e permitir reinclusão? | Não promover | [CADBENEF.NSP:213-217](legacy-sifap/natural-programs/CADBENEF.NSP#L213), [RN-002:74](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L74) | Mistério | <!-- mystery: O teste só usa operação e FOUND, enquanto RN-002 distingue cadastros ativos e excluídos --> |
 | 13 | SE a operação for alteração e não existir registro com o CPF informado, ENTÃO o sistema DEVE recusar a alteração | Indesejada | `CADBENEF.NSP:219-223` | Inferida | Sem correspondência no levantamento de 2012 |
-| 14 | A expansão de ano por janela de século foi desativada no programa | — | `CADBENEF.NSP:232-236` | Mistério | <!-- mystery: o bloco de janela de século está comentado e o comentário afirma que a janela permanece em LDASIFAP para arquivos históricos. Confirmar quais fluxos ainda dependem dessa janela --> |
-| 15 | O sistema DEVE calcular a idade pela diferença entre o ano corrente e o ano de nascimento | Ubíqua | `CADBENEF.NSP:241-242` | Mistério | <!-- mystery: o cálculo ignora mês e dia, então a idade muda em 1º de janeiro e não no aniversário. Confirmar se o desvio é intencional, pois alimenta a regra 17 --> |
+| 14 | Quais entradas históricas ainda requerem expansão de século? | Não promover | [CADBENEF.NSP:232-236](legacy-sifap/natural-programs/CADBENEF.NSP#L232), [BATCHPGT.NSP:339-347](legacy-sifap/natural-programs/BATCHPGT.NSP#L339) | Mistério | <!-- mystery: Como distinguir datas expandidas e não expandidas entre os fluxos? --> |
+| 15 | A idade usada pelo cadastro deve considerar mês e dia de nascimento? | Não promover | [CADBENEF.NSP:241-242](legacy-sifap/natural-programs/CADBENEF.NSP#L241) | Mistério | <!-- mystery: O cálculo por diferença de anos corresponde ao critério etário de negócio? --> |
 | 16 | QUANDO a operação for inclusão, o sistema DEVE atribuir a situação `A` ao beneficiário | Orientada a evento | `CADBENEF.NSP:245-247` | Inferida | O documento cita `BN-CD-SIT = 'A'` como situação ativa em RN-002 e RN-011, sem descrever a atribuição inicial |
-| 17 | ONDE a idade calculada for maior que 75 anos, o sistema DEVE atribuir a situação `S` | Opcional | `CADBENEF.NSP:250-252` | Mistério | <!-- mystery: o significado de 'S' não aparece no levantamento de 2012, que só cita 'A' e 'E'. O cabeçalho registra 'ADJUSTED ELDERLY STATUS' em 10/01/2011. Confirmar o domínio completo de STAT-BENEFICIARY no DDM BENEFIC --> |
-| 18 | ONDE a validação cadastral corporativa retornar inconsistência, o sistema DEVE emitir aviso e prosseguir com a gravação | Opcional | `CADBENEF.NSP:258-268` | Mistério | <!-- mystery: CALLNAT 'VALBENEF' retorna #QTY-ERRS, mas nenhum erro bloqueia a gravação. Confirmar se o modo aviso pendente de revisão desde 2011 ainda é o comportamento desejado --> |
+| 17 | Por que o cadastro atribui `S` quando a idade calculada ultrapassa 75? | Não promover | [CADBENEF.NSP:250-252](legacy-sifap/natural-programs/CADBENEF.NSP#L250), [BENEFIC.ddm:74-75](legacy-sifap/adabas-ddms/BENEFIC.ddm#L74) | Mistério | <!-- mystery: Qual política autoriza essa atribuição da situação descrita como suspensa? --> |
+| 18 | O diagnóstico de `VALBENEF` deve bloquear o cadastro, gerar aviso ou ter outro tratamento? | Não promover | [CADBENEF.NSP:258-268](legacy-sifap/natural-programs/CADBENEF.NSP#L258), [VALBENEF.NSN:126-179](legacy-sifap/natural-programs/VALBENEF.NSN#L126) | Mistério | <!-- mystery: Qual é a responsabilidade do chamador diante das inconsistências cadastrais? --> |
 | 19 | QUANDO a operação for inclusão, o sistema DEVE gravar o registro no arquivo 150 com data de cadastro e data de atualização iguais à data corrente | Orientada a evento | `CADBENEF.NSP:271-295` | Inferida | Sem correspondência direta; RN-011 afirma que não há exclusão física no DDM BENEFIC |
-| 20 | O endereço informado é gravado com perda dos últimos caracteres | — | `CADBENEF.NSP:277-279`, `CADBENEF.NSP:308` | Mistério | <!-- mystery: o comentário do chamado 4471/2003 declara que um endereço A80 é gravado em campo A60 e que os últimos 20 bytes se perdem. O mesmo MOVE se repete no ramo de alteração, sem o comentário. Confirmar se houve correção posterior ou se a perda persiste em produção --> |
-| 21 | QUANDO um cadastro for criado ou alterado, o sistema DEVE registrar o evento na trilha de auditoria do arquivo 153 | Orientada a evento | `CADBENEF.NSP:296-303`, `CADBENEF.NSP:320-326`, `CADBENEF.NSP:418` | Confirmada | RN-010, §1.2. O documento cita o subprograma `LOGAUDIT`; o código usa o copycode `CCAUDIT` com a sub-rotina `WRITE-AUDIT` |
-| 22 | QUANDO a operação for alteração, o sistema DEVE atualizar apenas parte dos campos informados na tela | Orientada a evento | `CADBENEF.NSP:306-327` | Mistério | <!-- mystery: o ramo de alteração não regrava DT-BIRTH, SEX, COD-PROGRAM, COD-REGION nem NUM-NIS, embora a tela colete todos. Confirmar se a omissão é intencional ou silenciosa --> |
-| 23 | SE a operação não for reconhecida no desvio final, ENTÃO o sistema DEVE informar operação inválida | Indesejada | `CADBENEF.NSP:329-331` | Mistério | <!-- mystery: o ramo NONE parece inalcançável, pois a regra 1 já encerra o fluxo para operação diferente de I ou A. Confirmar se existe caminho que chegue ao DECIDE com outro valor --> |
+| 20 | Qual deve ser o tratamento de endereço que excede as 60 posições do campo persistido? | Não promover | [CADBENEF.NSP:277-279](legacy-sifap/natural-programs/CADBENEF.NSP#L277), [CADBENEF.NSP:308](legacy-sifap/natural-programs/CADBENEF.NSP#L308), [BENEFIC.ddm:58](legacy-sifap/adabas-ddms/BENEFIC.ddm#L58) | Mistério | <!-- mystery: Que limite de entrada e política de preservação se aplicam ao endereço A80 movido para A60? --> |
+| 21 | Ao criar ou alterar, o corpo prepara a ação e chama `WRITE-AUDIT` antes do commit. | Orientada a evento | [CADBENEF.NSP:296-303](legacy-sifap/natural-programs/CADBENEF.NSP#L296), [CADBENEF.NSP:320-326](legacy-sifap/natural-programs/CADBENEF.NSP#L320) | Inferida | [RN-010:101](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L101) descreve auditoria de alteração em nível de campo; não confirma este contrato inteiro nem a inclusão |
+| 22 | Quais campos coletados podem ser alterados, considerando os que não recebem MOVE no ramo de atualização? | Não promover | [CADBENEF.NSP:306-327](legacy-sifap/natural-programs/CADBENEF.NSP#L306) | Mistério | <!-- mystery: A ausência de atualização de nascimento, sexo, programa, região e NIS é intencional? --> |
+| 23 | O ramo `NONE` do despacho de operação possui algum caminho alcançável após a validação inicial? | Não promover | [CADBENEF.NSP:139-143](legacy-sifap/natural-programs/CADBENEF.NSP#L139), [CADBENEF.NSP:329-331](legacy-sifap/natural-programs/CADBENEF.NSP#L329) | Mistério | <!-- mystery: O ramo alternativo representa proteção redundante ou um caminho necessário? --> |
 | 24 | SE ocorrer erro de execução Natural, ENTÃO o sistema DEVE desfazer a transação e encerrar com código 12 | Indesejada | `CADBENEF.NSP:423-428` | Inferida | Sem correspondência no levantamento de 2012 |
 
 ### Divergências entre código e levantamento de 2012
@@ -115,33 +119,33 @@ O próprio copycode padrão adverte que as cópias não são equivalentes e que 
 
 Ausência de `MASK` não significa ausência de rejeição de caracteres. Comparar essas implementações exige preservar conversões, estados e o uso do retorno pelo chamador; não foi executado teste de equivalência Natural.
 
-### Como cada mistério mudou
+### Confronto com o chamador
 
 | Regra | Situação após a leitura das dependências |
 |---|---|
-| 3 | **Agravada.** Não há uma validação de CPF, há três, com resultados diferentes para a mesma entrada |
-| 5 | **Precisa.** `SUBVALCP` calcula 1001, 1002, 1005 e 9999, e `CADBENEF` descarta todos; o caminho que decide é o mais fraco dos três |
-| 10 | **Precisa.** `SUBVALNI` distingue 1010, 1011 e 1012, mas `CADBENEF` só emite aviso e grava assim mesmo |
-| 17 | **Parcialmente resolvida.** `S` pertence ao domínio aceito por `VALBENEF.NSN:174-175` (`A`, `S`, `C`, `I`, `D`); o significado permanece indocumentado |
-| 18 | **Precisa.** `VALBENEF` verifica CPF, data, nome, UF e situação, e devolve até dez mensagens que `CADBENEF` nunca lê |
-| 21 | **Confirmada com ressalvas.** `CCAUDIT.NSC:60-100` grava de fato no arquivo 153, mas com semente de sequência lida uma vez por execução |
+| 3 | A existência de corpos diferentes exige comparação; não foi demonstrada uma ordenação entre os conjuntos de CPFs aceitos. |
+| 5 | A decisão local usa `#CPF-VALID`; `#PV-COD-RETURN` dessa chamada não é testado pelo cadastro. Não foi demonstrado que a chamada inteira seja isenta de efeitos. |
+| 10 | O cadastro escreve aviso de NIS; passar desse ponto não garante gravação, pois ainda existem verificações e possíveis erros posteriores. |
+| 17 | O DDM descreve S como suspenso e o validador aceita o código; a justificativa de negócio da atribuição etária permanece aberta. |
+| 18 | O vetor tem capacidade para dez mensagens; isso não significa dez verificações realizadas. O chamador mostra a quantidade, não os textos individuais. |
+| 21 | O copycode contém STORE e não contém commit. Isso confirma a origem textual da escrita, não a efetivação de uma transação no banco. |
 
 ### Achados novos trazidos pelos membros de apoio
 
 | # | Achado | Evidência | Classificação |
 |---|---|---|---|
-| 25 | O código 1003 é inalcançável; um CPF com dígitos iguais retorna 1001 e é diagnosticado como erro de dígito verificador | `PDAVALID.NSA:35`, `SUBVALCP.NSN:75` | Mistério |
+| 25 | Por que o contrato descreve 1003, mas os corpos da família não o atribuem? CPF zero possui retorno próprio; outras rejeições do copycode são mapeadas para 1001. | [PDAVALID.NSA:35](legacy-sifap/natural-programs/PDAVALID.NSA#L35), [SUBVALCP.NSN:56-78](legacy-sifap/natural-programs/SUBVALCP.NSN#L56) | Mistério <!-- mystery: O diagnóstico deve distinguir dígitos iguais das demais rejeições? --> |
 | 26 | `#CPF-EQUAL` é declarado em `SUBVALCP` e usado pelo `CCVALCPF` inserido por `INCLUDE`; a afirmação anterior de variável sem uso era um erro de leitura isolada. | [SUBVALCP.NSN:41](legacy-sifap/natural-programs/SUBVALCP.NSN#L41), [SUBVALCP.NSN:94](legacy-sifap/natural-programs/SUBVALCP.NSN#L94), [CCVALCPF.NSC:80-90](legacy-sifap/natural-programs/CCVALCPF.NSC#L80) | Retificada; não contar como mistério |
-| 27 | `#PV-IND-SPECIAL` recebe `N` fixo nos dois subprogramas; o valor `S` previsto no contrato nunca ocorre | `PDAVALID.NSA:55`, `SUBVALCP.NSN:45`, `SUBVALNI.NSN:53` | Mistério |
-| 28 | `VALBENEF` aceita as situações `A`, `S`, `C`, `I` e `D`, e **não** aceita `E`, que o levantamento de 2012 usa para exclusão lógica | `VALBENEF.NSN:174-175` | Mistério |
-| 29 | Fevereiro é sempre validado com 29 dias | `VALBENEF.NSN:104` | Mistério |
-| 30 | A view de `BENEFIC` em `VALBENEF` é declarada e nunca lida desde 1998 | `VALBENEF.NSN:29` | Mistério |
+| 27 | Qual é a finalidade do indicador especial se os dois subprogramas atribuem N e não atribuem S? | [PDAVALID.NSA:55](legacy-sifap/natural-programs/PDAVALID.NSA#L55), [SUBVALCP.NSN:45](legacy-sifap/natural-programs/SUBVALCP.NSN#L45), [SUBVALNI.NSN:53](legacy-sifap/natural-programs/SUBVALNI.NSN#L53) | Mistério <!-- mystery: Qual é a responsabilidade da família pelo indicador especial? --> |
+| 28 | Como reconciliar o E de exclusão do documento com o conjunto A/S/C/I/D aceito pelo validador e descrito pelo DDM? | [VALBENEF.NSN:174-179](legacy-sifap/natural-programs/VALBENEF.NSN#L174), [BENEFIC.ddm:74-75](legacy-sifap/adabas-ddms/BENEFIC.ddm#L74) | Mistério <!-- mystery: Qual domínio cadastral é válido para os registros existentes? --> |
+| 29 | Qual é a regra de calendário para fevereiro, inicializado com 29 dias independentemente do ano? | [VALBENEF.NSN:104](legacy-sifap/natural-programs/VALBENEF.NSN#L104), [VALBENEF.NSN:302-312](legacy-sifap/natural-programs/VALBENEF.NSN#L302) | Mistério <!-- mystery: A validação deve distinguir anos bissextos? --> |
+| 30 | O validador deveria confrontar dados persistidos, já que declara a view mas não a acessa? | [VALBENEF.NSN:29-38](legacy-sifap/natural-programs/VALBENEF.NSN#L29), [VALBENEF.NSN:126-179](legacy-sifap/natural-programs/VALBENEF.NSN#L126) | Mistério <!-- mystery: Qual fronteira de validação pertence a VALBENEF? --> |
 | 31 | A validação de UF é inteiramente pulada quando a UF vem em branco | `VALBENEF.NSN:156` | Inferida |
-| 32 | O nome é aceito quando contém ao menos um espaço a partir da segunda posição | `VALBENEF.NSN:316-331` | Inferida |
-| 33 | A semente da sequência de auditoria é lida uma vez por execução e incrementada em memória | `CCAUDIT.NSC:65-72` | Mistério |
-| 34 | A hora do evento perde a fração: `*TIMN` é `N7` e o campo do DDM é `N6` | `CCAUDIT.NSC:75-77` | Mistério |
-| 35 | O campo `COD-PROFILE` do DDM não é preenchido pela rotina; chamado 7742 em aberto | `CCAUDIT.NSC:50-51` | Mistério |
-| 36 | A ação `CO` não pode ser registrada desde 2010, mas a rotina não bloqueia e transfere a responsabilidade ao chamador | `CCAUDIT.NSC:45-48` | Mistério |
+| 32 | O teste da posição do primeiro espaço distingue sobrenome de preenchimento à direita? | [VALBENEF.NSN:316-331](legacy-sifap/natural-programs/VALBENEF.NSN#L316) | Mistério <!-- mystery: Como tratar nomes sem separador interno em um campo alfanumérico fixo? --> |
+| 33 | Como manter a unicidade da sequência de auditoria entre execuções concorrentes? | [CCAUDIT.NSC:65-72](legacy-sifap/natural-programs/CCAUDIT.NSC#L65), [AUDIT.ddm:31](legacy-sifap/adabas-ddms/AUDIT.ddm#L31) | Mistério <!-- mystery: Que garantia de concorrência existe para a semente lida e incrementada? --> |
+| 34 | Qual precisão temporal é necessária na auditoria, cuja hora é convertida para segundos? | [CCAUDIT.NSC:75-80](legacy-sifap/natural-programs/CCAUDIT.NSC#L75), [AUDIT.ddm:33-34](legacy-sifap/adabas-ddms/AUDIT.ddm#L33) | Mistério <!-- mystery: A precisão em segundos é suficiente para os usos da auditoria? --> |
+| 35 | Quem deve preencher o perfil presente no DDM mas ausente da view do copycode? | [CCAUDIT.NSC:20-51](legacy-sifap/natural-programs/CCAUDIT.NSC#L20), [AUDIT.ddm:76](legacy-sifap/adabas-ddms/AUDIT.ddm#L76) | Mistério <!-- mystery: Qual escritor é responsável pelo perfil do usuário na auditoria? --> |
+| 36 | Qual política de registro de CO é válida diante do comentário do copycode e dos escritores encontrados? | [CCAUDIT.NSC:45-48](legacy-sifap/natural-programs/CCAUDIT.NSC#L45), [BATCHCON.NSP:318](legacy-sifap/natural-programs/BATCHCON.NSP#L318), [CONSBENF.NSP:172](legacy-sifap/natural-programs/CONSBENF.NSP#L172) | Mistério <!-- mystery: Como interpretar a política de CO entre os chamadores? --> |
 
 ---
 
@@ -172,10 +176,10 @@ Ausência de `MASK` não significa ausência de rejeição de caracteres. Compar
 | # | Enunciado da regra | Candidato EARS | Origem | Classificação | Notas |
 |---|---|---|---|---|---|
 | 48 | SE a operação não for `I` nem `C`, ENTÃO o sistema DEVE recusar a entrada | Indesejada | `CADPROG.NSP:84-87` | Inferida | — |
-| 49 | ONDE a operação for consulta, o sistema DEVE exibir os dados do programa e encerrar | Opcional | `CADPROG.NSP:89-92`, `CADPROG.NSP:156-171` | Inferida | A consulta não grava auditoria, o que é coerente com a vedação da ação `CO` |
+| 49 | QUANDO a operação for consulta, o sistema DEVE exibir os dados do programa e encerrar o fluxo | Orientada a evento | [CADPROG.NSP:89-92](legacy-sifap/natural-programs/CADPROG.NSP#L89), [CADPROG.NSP:156-171](legacy-sifap/natural-programs/CADPROG.NSP#L156) | Inferida | O corpo da consulta não chama auditoria; isso não confirma uma política organizacional |
 | 50 | SE já existir programa com o código informado, ENTÃO o sistema DEVE recusar a inclusão | Indesejada | `CADPROG.NSP:118-121` | Inferida | — |
-| 51 | O sistema DEVE calcular o valor-base aplicando o fator `1,00 + (fator de ajuste × 0,347215)` | Ubíqua | `CADPROG.NSP:124-125` | Mistério | <!-- mystery: a constante 0,347215 não aparece em nenhum documento nem no DDM; o levantamento de 2012 cita um FACTOR-K que ninguém soube explicar --> |
-| 52 | QUANDO um programa for incluído, o sistema DEVE gravar o valor **já ajustado** no campo de valor-base individual | Orientada a evento | `CADPROG.NSP:130`, `CADPROG.NSP:137` | Mistério | <!-- mystery: o valor ajustado e o fator de ajuste são gravados juntos; qualquer recálculo posterior que reaplique o fator o aplicaria duas vezes --> |
+| 51 | Qual é a origem e o significado do multiplicador 0.347215 usado no cálculo local? | Não promover | [CADPROG.NSP:124-125](legacy-sifap/natural-programs/CADPROG.NSP#L124), [SOCPROG.ddm:47-52](legacy-sifap/adabas-ddms/SOCPROG.ddm#L47) | Mistério | <!-- mystery: A relação entre o fator local e o campo K persistido não foi explicada pelas fontes consultadas --> |
+| 52 | Como interpretar a base já ajustada e o fator de ajuste gravados no mesmo cadastro? | Não promover | [CADPROG.NSP:130-138](legacy-sifap/natural-programs/CADPROG.NSP#L130), [CALCBENF.NSN:259-266](legacy-sifap/natural-programs/CALCBENF.NSN#L259) | Mistério | <!-- mystery: Quais transformações devem ser aplicadas ao valor-base em cada etapa? --> |
 | 53 | QUANDO um programa for incluído, o sistema DEVE atribuir a situação `A` | Orientada a evento | `CADPROG.NSP:134` | Inferida | Domínio do DDM: `A`, `I`, `E` |
 | 54 | O programa aceita tipo, datas, idades e renda máxima sem qualquer validação | — | `CADPROG.NSP:95-105` | Mistério | <!-- mystery: nenhum campo da tela de inclusão é criticado; apenas a operação e a duplicidade de código são verificadas --> |
 | 55 | A consulta detecta ausência de registro testando o contador após o laço | — | `CADPROG.NSP:166-169` | Mistério | <!-- mystery: o comentário declara estilo de 1997 não padronizado e chamado 3312/2004 em aberto --> |
@@ -196,7 +200,7 @@ Os quatro arquivos `.ddm` foram consultados. As evidências de código e de dici
 | A hora do evento perde precisão? | O campo é `N6` (`HHMMSS`), enquanto `*TIMN` devolve `N7` | `AUDIT.ddm:33` |
 | `FACTOR-K` existe fora do código? | Sim, campo `BG`, marcado `>>> UNDOCUMENTED <<<`, inserido em ago/2008 "a pedido da SENARC", sem detalhes no chamado | `SOCPROG.ddm:47-51` |
 
-### Contradições novas, todas com evidência dos dois lados
+### Confrontos entre código, DDMs e documentação
 
 | # | Contradição | Código | Dicionário de dados ou documento |
 |---|---|---|---|
@@ -204,11 +208,11 @@ Os quatro arquivos `.ddm` foram consultados. As evidências de código e de dici
 | 57 | Significado do código de região | Nenhuma validação no código | `01-05 ou 99` em `BENEFIC.ddm:66` e `1=N 2=NE 3=CO 4=SE 5=S 6=ESP` em `SOCPROG.ddm:87`, contra "01 a 27, estados" em RN-005 |
 | 58 | Limite de dependentes | Sexta ocorrência aceita em `CADDEPEN.NSP:117-120` | Grupo periódico `(1:10)` em `BENEFIC.ddm:87`, contra "máximo 3" em RN-004 |
 | 59 | Quantidade de faixas de cálculo | — | Grupo periódico `(1:5)` em `SOCPROG.ddm:69`, contra "até 10 faixas" em RN-017 |
-| 60 | Auditoria em nível de campo | `CCAUDIT` grava apenas texto livre em `DESCR-ACTION` | `GRP-BEFORE` e `GRP-AFTER`, com 20 ocorrências cada, existem e nunca são preenchidos: `AUDIT.ddm:61-66`, contra RN-010 |
+| 60 | Qual cobertura de antes/depois é exigida? | O copycode preenche identificação e descrição, não as listas MU; BATCHCON também escreve valores escalares | [AUDIT.ddm:61-70](legacy-sifap/adabas-ddms/AUDIT.ddm#L61), [CCAUDIT.NSC:60-100](legacy-sifap/natural-programs/CCAUDIT.NSC#L60), [BATCHCON.NSP:336-339](legacy-sifap/natural-programs/BATCHCON.NSP#L336), [RN-010:101](legacy-sifap/legacy-docs/BUSINESS-RULES-2012.md#L101) |
 | 61 | Número do arquivo do cadastro de programas | Cabeçalho diz arquivo 155 em `CADPROG.NSP:10`, corpo diz 151 em `CADPROG.NSP:109` | `FNR: 151` em `SOCPROG.ddm:21` |
 | 62 | `FACTOR-K` calculado e nunca persistido | `CADPROG.NSP:124-125` calcula em variável local | O campo `BG FACTOR-K` do DDM permanece sem gravação: `SOCPROG.ddm:47` |
 | 63 | Código de ação `DV` não existe no domínio | — | O rodapé cita volume de `'CO'/'DV'`, mas `COD-ACTION` não define `DV`: `AUDIT.ddm:39-48` contra `AUDIT.ddm:128` |
-| 64 | Consultas continuaram sendo auditadas depois da vedação | — | O rodapé atribui 193,8 milhões de registros a `CO`/`DV` entre 01/2014 e 03/2018, embora a Portaria 213/2010 vede o registro de `CO`: `AUDIT.ddm:128` |
+| 64 | Como reconciliar a anotação de retenção de CO com a composição histórica do volume? | Escritas de CO e DV existem no corpus, mas não foi medida a população em produção | [AUDIT.ddm:128-136](legacy-sifap/adabas-ddms/AUDIT.ddm#L128), [BATCHCON.NSP:311-343](legacy-sifap/natural-programs/BATCHCON.NSP#L311) |
 
 > [!WARNING]
 > Os totais de registros dos DDMs vêm de uma execução ADAREP de **14/03/2018** e descrevem aquele momento, não a população atual. A [cronologia](legacy-sifap/CHRONOLOGY.md) trata essa confusão como armadilha documentada. A medição atual cabe ao DBA.
@@ -433,24 +437,47 @@ Estes registros complementam as regras dos chamadores. Uma diretiva `INCLUDE` in
 
 ---
 
+## Complemento de controle dos cadastros
+
+Os itens abaixo completam a leitura dos ramos técnicos e dos subprogramas locais que não estavam individualizados na primeira extração. Não são novos mistérios canônicos.
+
+| # | Condição e comportamento observado | Origem | Classificação |
+|---|---|---|---|
+| 184 | O `DECIDE` da rotina interna de CPF converte caracteres 0-9; o ramo `NONE VALUE` marca inválido e sai da rotina. | [CADBENEF.NSP:344-375](legacy-sifap/natural-programs/CADBENEF.NSP#L344) | Inferida |
+| 185 | Primeiro verificador: resto calculado < 2 produz zero, caso contrário 11 menos resto. A expressão de resto precisa ser comparada ao copycode sob a semântica numérica Natural. | [CADBENEF.NSP:377-389](legacy-sifap/natural-programs/CADBENEF.NSP#L377) | Mistério <!-- mystery: Qual efeito de precisão tem o COMPUTE usado para o resto? --> |
+| 186 | Primeiro verificador divergente marca inválido e sai da rotina local. | [CADBENEF.NSP:391-394](legacy-sifap/natural-programs/CADBENEF.NSP#L391) | Inferida |
+| 187 | Segundo verificador usa os mesmos ramos de resto e marca inválido se divergir do dígito 11. | [CADBENEF.NSP:396-413](legacy-sifap/natural-programs/CADBENEF.NSP#L396) | Inferida |
+| 188 | `#ERR` verdadeiro encerra o laço antes da validação corporativa; após o laço, erro verdadeiro exibe `#MSG`. | [CADBENEF.NSP:254-256](legacy-sifap/natural-programs/CADBENEF.NSP#L254), [CADBENEF.NSP:337-339](legacy-sifap/natural-programs/CADBENEF.NSP#L337) | Inferida |
+| 189 | Na alteração, qual valor de situação deve ser preservado quando a idade não ultrapassa 75? O caminho atribui A apenas na inclusão e depois move `#STATUS` para a view. | [CADBENEF.NSP:245-252](legacy-sifap/natural-programs/CADBENEF.NSP#L245), [CADBENEF.NSP:306-318](legacy-sifap/natural-programs/CADBENEF.NSP#L306) | Mistério <!-- mystery: Como preservar a situação anterior no ramo de alteração? --> |
+| 190 | CADDEPEN atribui falso no bloco sem titular e verdadeiro depois de END-NOREC; qual resultado e conteúdo de view são válidos nesse caminho? | [CADDEPEN.NSP:96-103](legacy-sifap/natural-programs/CADDEPEN.NSP#L96) | Mistério <!-- mystery: O caminho sem titular mantém o indicador esperado após END-NOREC? --> |
+| 191 | Erros de nome/parentesco e de duplicidade executam `ESCAPE TOP`, repetindo a coleta; a rejeição de CPF apenas atribui a mensagem, sem marcar esse indicador. | [CADDEPEN.NSP:147-188](legacy-sifap/natural-programs/CADDEPEN.NSP#L147) | Inferida |
+| 192 | Resposta diferente de S encerra o laço de novas inclusões; S repete o fluxo, sujeito ao teste de quantidade. | [CADDEPEN.NSP:215-219](legacy-sifap/natural-programs/CADDEPEN.NSP#L215) | Inferida |
+| 193 | Erro Natural em CADDEPEN escreve diagnóstico, desfaz a transação corrente e termina com 12. | [CADDEPEN.NSP:240-245](legacy-sifap/natural-programs/CADDEPEN.NSP#L240) | Inferida |
+| 194 | CADPROG usa falso no bloco sem programa e verdadeiro após END-NOREC; como esse resultado alimenta o bloqueio de duplicidade? | [CADPROG.NSP:111-121](legacy-sifap/natural-programs/CADPROG.NSP#L111) | Mistério <!-- mystery: Qual indicador resulta do caminho de busca sem programa? --> |
+| 195 | CADPROG grava programa, prepara ação IN/PROG, chama WRITE-AUDIT e confirma a transação. | [CADPROG.NSP:127-147](legacy-sifap/natural-programs/CADPROG.NSP#L127) | Inferida |
+| 196 | Erro Natural em CADPROG escreve diagnóstico, desfaz a transação corrente e termina com 12. | [CADPROG.NSP:181-186](legacy-sifap/natural-programs/CADPROG.NSP#L181) | Inferida |
+
 ## Resumo geral
 
 | Métrica | Valor |
 |---|---:|
-| Programas atribuídos lidos | 4 de 15: três cadastros e `VALBENEF`, lido como dependência |
-| Membros de apoio lidos | 5 de 9: `PDAVALID`, `SUBVALCP`, `SUBVALNI`, `CCAUDIT`, `CCVALCPF` |
-| DDMs consultados | 4 de 4; revisão integral e confronto com a FDT pendentes |
-| Itens catalogados | 64 |
-| Classificações dos itens | Em revisão; não equivalem ao placar dos 20 mistérios canônicos |
+| Programas atribuídos lidos | 15 de 15, com condicionais, alternativas, escapes e handlers examinados |
+| Membros de apoio lidos | 9 de 9; contratos Natural neste catálogo e contratos JCL no mapa de dependências |
+| DDMs/FDT | 4 de 4 DDMs e 1 de 1 FDT fornecida; confronto em data-map.md |
+| Itens numerados | 196 entradas, incluindo confrontos, complementos e a retificação explícita do item 26; não são 196 regras distintas |
+| Corroboração documental restrita | 3 itens: 2, 4 e 7; não equivalem a requisitos aprovados |
+| Questões canônicas | Nenhum ID foi validado pela equipe nesta sessão; não existe comprovação de 20/20 |
 | Validação humana | Pendente; nenhuma pergunta foi encerrada |
 
 ---
 
 ## Definição de pronto
 
-- [ ] Todo bloco condicional dos programas atribuídos foi examinado.
-- [ ] Toda regra cita `arquivo:linha`.
-- [ ] Toda questão em aberto está registrada em `mysteries-found.md` sem conclusão.
+- [x] Blocos condicionais, alternativas e caminhos de erro dos 15 programas foram examinados na leitura estática.
+- [x] Entradas possuem referência de origem; prefixos antigos sem diretório resolvem para os membros únicos do inventário.
+- [x] Tipos e dimensões foram registrados nas notas de leitura.
+- [ ] A equipe validou as perguntas e sua correspondência aos IDs canônicos.
+- [ ] A execução Natural confirmou conversões, cursores e transações; nenhuma execução foi realizada nesta sessão.
 
 ---
 

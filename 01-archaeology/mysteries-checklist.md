@@ -70,18 +70,40 @@ Os rótulos indicam a **área** do mistério, nunca o achado.
 
 ---
 
-## Placar da dupla
+## Placar das cinco duplas
 
-Preencha com os IDs da sua dupla (por exemplo, a Dupla 2 preenche de `M-05` a `M-08`).
+Revisão assistida em 2026-09-17: os 15 programas atribuídos, nove membros de apoio, quatro DDMs e a FDT fornecida possuem registro de leitura no [inventário](inventory.md). Isso não atribui um achado a um ID canônico. As perguntas estão no [registro](mysteries-found.md), e a pessoa leitora deve estabelecer a correspondência antes de marcar qualquer posição abaixo.
 
-| ID canônico | Encontrado | Registrado em `mysteries-found.md` |
-|---|---|---|
-| `SIFAP-M-__` | [ ] | [ ] |
-| `SIFAP-M-__` | [ ] | [ ] |
-| `SIFAP-M-__` | [ ] | [ ] |
-| `SIFAP-M-__` | [ ] | [ ] |
+| Dupla | ID canônico | Encontrado pela equipe | Evidência associada no registro |
+|---|---|---|---|
+| 1 | `SIFAP-M-01` | [ ] | [ ] |
+| 1 | `SIFAP-M-02` | [ ] | [ ] |
+| 1 | `SIFAP-M-03` | [ ] | [ ] |
+| 1 | `SIFAP-M-04` | [ ] | [ ] |
+| 2 | `SIFAP-M-05` | [ ] | [ ] |
+| 2 | `SIFAP-M-06` | [ ] | [ ] |
+| 2 | `SIFAP-M-07` | [ ] | [ ] |
+| 2 | `SIFAP-M-08` | [ ] | [ ] |
+| 3 | `SIFAP-M-09` | [ ] | [ ] |
+| 3 | `SIFAP-M-10` | [ ] | [ ] |
+| 3 | `SIFAP-M-11` | [ ] | [ ] |
+| 3 | `SIFAP-M-12` | [ ] | [ ] |
+| 4 | `SIFAP-M-13` | [ ] | [ ] |
+| 4 | `SIFAP-M-14` | [ ] | [ ] |
+| 4 | `SIFAP-M-15` | [ ] | [ ] |
+| 4 | `SIFAP-M-16` | [ ] | [ ] |
+| 5 | `SIFAP-M-17` | [ ] | [ ] |
+| 5 | `SIFAP-M-18` | [ ] | [ ] |
+| 5 | `SIFAP-M-19` | [ ] | [ ] |
+| 5 | `SIFAP-M-20` | [ ] | [ ] |
 
-**Achados adicionais (bônus):** <!-- liste aqui; não mudam o denominador -->
+**Achados adicionais (bônus):** classificação ainda não fornecida pela equipe. A quantidade de perguntas propostas não muda o denominador vinte e não comprova completude dos mistérios.
+
+- [ ] Cada dupla confirmou a sua leitura, não apenas a leitura do assistente.
+- [ ] Cada pergunta foi associada a um ID ou classificada como bônus pela pessoa leitora.
+- [ ] Foram designadas pessoas responsáveis e fornecidas hipóteses explicitamente não confirmadas.
+- [ ] Os casos de dois lados possuem as duas evidências conferidas pela equipe.
+- [ ] A conversa H1 e a decisão de escopo foram registradas pela equipe.
 
 ---
 

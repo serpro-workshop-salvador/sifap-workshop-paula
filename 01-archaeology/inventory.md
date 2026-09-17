@@ -1,8 +1,8 @@
-# Inventário do Legado — Time `<preencher>`
+# Inventário do Legado — Time `paula`
 
 > **Trilha:** [Kit do Time](../README.md) › [Estágio 1](README.md) › **Inventário**
 
-**Primeiro artefato do Estágio 1.** Varra a estrutura e conte os arquivos sem abrir nenhum programa — use apenas os nomes de arquivo e a estrutura de pastas.
+**Inventário do Estágio 1.** Preserva o levantamento inicial por nomes e acrescenta o catálogo e a cobertura da leitura assistida dos membros Natural/JCL e das estruturas Adabas.
 
 | Campo | Valor |
 |---|---|
@@ -12,14 +12,15 @@
 | **Resultado esperado** | Contagens corretas, padrões de nomenclatura identificados e 3 itens estranhos sinalizados |
 
 > [!NOTE]
-> Monte este inventário sem abrir nenhum programa. Trabalhe apenas com nomes de arquivo e estrutura de pastas. Ele será revisado à medida que o time extrai regras, mapeia dependências e registra mistérios.
+> O kickoff foi realizado apenas por nomes e estrutura. O catálogo ao final foi acrescentado depois da leitura dos fontes; não infira que uma hipótese inicial de nomenclatura foi confirmada como regra de negócio.
 
 **Data:** 2026-09-17
 **Dupla responsável:** `<preencher>`
 **Caminho varrido:** `01-archaeology/legacy-sifap/`
 
-Esta é a primeira análise do acervo. As hipóteses abaixo serão revisadas durante a
-leitura dos arquivos e o rastreamento explícito das dependências.
+As seções de contagem e nomenclatura preservam a primeira análise. A seção de
+cobertura registra a revisão estática posterior, sem substituir a leitura e a
+validação humana exigidas no handoff.
 
 ---
 
@@ -105,11 +106,77 @@ rastreamento de `CALLNAT`, `INCLUDE`, `USING` e dos JCLs revelar outras dependê
 
 ---
 
+## Catálogo dos 15 membros atribuídos
+
+As finalidades são hipóteses de uma linha apoiadas no cabeçalho e no corpo lido, não especificações aprovadas. Datas e autoria permanecem na [cronologia canônica](legacy-sifap/CHRONOLOGY.md). O intervalo de leitura inclui início do arquivo até `END`; as regras condicionais estão em [business-rules-catalog.md](business-rules-catalog.md).
+
+| Dupla | Membro | Hipótese de finalidade | Leitura integral | DEFINE DATA |
+|---|---|---|---|---|
+| 1 | [CADBENEF.NSP](legacy-sifap/natural-programs/CADBENEF.NSP) | Manter cadastro por inclusão e alteração | 1-430 | 13-104 |
+| 1 | [CADDEPEN.NSP](legacy-sifap/natural-programs/CADDEPEN.NSP) | Acrescentar dependentes ao grupo do titular | 1-247 | 12-82 |
+| 1 | [CADPROG.NSP](legacy-sifap/natural-programs/CADPROG.NSP) | Incluir e consultar programas sociais | 1-188 | 12-72 |
+| 2 | [BATCHPGT.NSP](legacy-sifap/natural-programs/BATCHPGT.NSP) | Gerar pagamentos e extrato de uma competência | 1-596 | 27-156 |
+| 2 | [BATCHREL.NSP](legacy-sifap/natural-programs/BATCHREL.NSP) | Consolidar pagamentos por região e situação | 1-280 | 22-78 |
+| 2 | [BATCHCON.NSP](legacy-sifap/natural-programs/BATCHCON.NSP) | Confrontar pagamentos com detalhes de retorno bancário | 1-347 | 20-103 |
+| 3 | [CALCBENF.NSN](legacy-sifap/natural-programs/CALCBENF.NSN) | Calcular benefício, gravar pagamento e devolver valores | 1-378 | 16-93 |
+| 3 | [CALCCORR.NSP](legacy-sifap/natural-programs/CALCCORR.NSP) | Aplicar correção a pagamentos selecionados | 1-255 | 12-82 |
+| 3 | [CALCDSCT.NSP](legacy-sifap/natural-programs/CALCDSCT.NSP) | Calcular contribuição e descontos de um pagamento | 1-217 | 12-57 |
+| 4 | [VALBENEF.NSN](legacy-sifap/natural-programs/VALBENEF.NSN) | Retornar inconsistências de dados cadastrais | 1-333 | 15-71 |
+| 4 | [VALDOCS.NSP](legacy-sifap/natural-programs/VALDOCS.NSP) | Validar documentos em tela com tratamento de prefixos especiais | 1-243 | 14-52 |
+| 4 | [VALELEG.NSN](legacy-sifap/natural-programs/VALELEG.NSN) | Avaliar elegibilidade usando beneficiário e programa | 1-269 | 15-66 |
+| 5 | [CONSBENF.NSP](legacy-sifap/natural-programs/CONSBENF.NSP) | Consultar cadastro por CPF/NIS e exibir pagamentos | 1-316 | 18-104 |
+| 5 | [RELPGT.NSP](legacy-sifap/natural-programs/RELPGT.NSP) | Imprimir detalhe, subtotais e total de pagamentos | 1-273 | 17-72 |
+| 5 | [RELAUDIT.NSP](legacy-sifap/natural-programs/RELAUDIT.NSP) | Apresentar eventos e distribuição diária de auditoria | 1-305 | 18-66 |
+
+## Catálogo dos nove membros de apoio
+
+| Membro | Tipo | Hipótese de finalidade | Evidência de leitura |
+|---|---|---|---|
+| [PDAVALID.NSA](legacy-sifap/natural-programs/PDAVALID.NSA) | PDA | Contrato da família CPF/NIS | 1-57; DEFINE DATA 43-57 |
+| [PDACALC.NSA](legacy-sifap/natural-programs/PDACALC.NSA) | PDA | Contrato de contexto e resultados da cadeia de pagamentos | 1-79; DEFINE DATA 49-79 |
+| [LDASIFAP.NSL](legacy-sifap/natural-programs/LDASIFAP.NSL) | LDA | Declarações e tabelas locais reutilizáveis | 1-107; DEFINE DATA 32-107 |
+| [CCVALCPF.NSC](legacy-sifap/natural-programs/CCVALCPF.NSC) | Copycode | Rotina inserida de validação de CPF | 1-130, incluindo campos requeridos e sub-rotina |
+| [CCAUDIT.NSC](legacy-sifap/natural-programs/CCAUDIT.NSC) | Copycode | Rotina inserida de gravação de evento | 1-100, incluindo contrato da view e controle transacional |
+| [SUBVALCP.NSN](legacy-sifap/natural-programs/SUBVALCP.NSN) | Subprograma | Adaptar CPF ao copycode e devolver diagnóstico | 1-96; DEFINE DATA 28-42 |
+| [SUBVALNI.NSN](legacy-sifap/natural-programs/SUBVALNI.NSN) | Subprograma | Validar NIS e devolver diagnóstico | 1-152; DEFINE DATA 38-50 |
+| [SIFAPJ01.jcl](legacy-sifap/natural-programs/SIFAPJ01.jcl) | JCL | Invocar folha e condicionar cópia/step de aviso | Arquivo integral; CMSYNIN 69-74 e condições 80/92 |
+| [SIFAPJ02.jcl](legacy-sifap/natural-programs/SIFAPJ02.jcl) | JCL | Invocar relatório consolidado e detalhado | Arquivo integral; CMSYNIN 66-71 e 94-101 |
+
+`VALBENEF` não faz parte destes nove: é um dos 15 atribuídos. Copycodes não possuem `DEFINE DATA` próprio, mas documentam campos que precisam existir no objeto que os inclui.
+
+## Cobertura Adabas e artefatos
+
+| Fonte | Leitura integral | Artefato de confronto |
+|---|---|---|
+| [BENEFIC.ddm](legacy-sifap/adabas-ddms/BENEFIC.ddm) | 1-179 | [data-map.md](data-map.md) |
+| [SOCPROG.ddm](legacy-sifap/adabas-ddms/SOCPROG.ddm) | 1-126 | [data-map.md](data-map.md) |
+| [PAYMENT.ddm](legacy-sifap/adabas-ddms/PAYMENT.ddm) | 1-165 | [data-map.md](data-map.md) |
+| [AUDIT.ddm](legacy-sifap/adabas-ddms/AUDIT.ddm) | 1-147 | [data-map.md](data-map.md) |
+| [FDT-150-BENEFICIARY.txt](legacy-sifap/adabas-ddms/FDT-150-BENEFICIARY.txt) | 1-156, até END OF REPORT | [data-map.md](data-map.md) |
+
+**Cobertura estática:** 15/15 atribuídos, 9/9 de apoio, 4/4 DDMs e 1/1 FDT fornecida. Isto não é prova de execução, equivalência, completude do ambiente de produção nem validação dos 20 mistérios canônicos.
+
+**Ordem de revisão após a leitura:** conferir o [grafo](dependency-map.md), confrontar as perguntas com o [mapa de dados](data-map.md), validar vocabulário no [glossário](glossary.md) e registrar a decisão humana no [relatório](discovery-report.md). A equipe conserva o registro dos programas que cada pessoa efetivamente leu.
+
+## Conferência reproduzível
+
+As ferramentas desta sessão enumeraram nomes e conferiram instruções por busca. Para reconferir a árvore sem abrir os fontes:
+
+```bash
+find 01-archaeology/legacy-sifap -type d
+find 01-archaeology/legacy-sifap -type f
+```
+
+Os comandos acima são uma referência para revisão; não foram executados nesta sessão. Não foram medidos tamanhos em bytes nem executados programas Natural.
+
 ## Definição de pronto
 
 - [x] O inventário existe com contagens corretas.
 - [x] 3 padrões de nomenclatura ou mais identificados.
 - [x] 3 itens estranhos sinalizados.
+- [x] Os 24 membros possuem hipótese de finalidade e registro de leitura estática.
+- [x] Os quatro DDMs e a FDT possuem mapa de dados de apoio.
+- [ ] A equipe confirmou sua própria leitura e as associações de mistérios canônicos.
 
 ---
 
