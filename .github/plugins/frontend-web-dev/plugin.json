@@ -1,0 +1,25 @@
+{
+  "name": "frontend-web-dev",
+  "description": "Instruções orientadoras (prompts), regras e modos de conversa essenciais para o desenvolvimento moderno de interfaces web, incluindo React, Angular, Vue, TypeScript e estruturas CSS (frameworks).",
+  "version": "1.0.0",
+  "author": {
+    "name": "Awesome Copilot Community"
+  },
+  "repository": "https://github.com/github/awesome-copilot",
+  "license": "MIT",
+  "keywords": [
+    "frontend",
+    "web",
+    "react",
+    "typescript",
+    "javascript",
+    "css",
+    "html",
+    "angular",
+    "vue"
+  ],
+  "skills": [
+    "../../skills/react-nextjs-frontend/",
+    "../../skills/playwright-generate-test/"
+  ]
+}
