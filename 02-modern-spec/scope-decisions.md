@@ -8,7 +8,7 @@
 |---|---|
 | **Público-alvo** | paula, acumulando os papéis de requisitos, arquitetura e implementação |
 | **Finalidade** | Apoiar a conversa do estágio; não substitui os artefatos formais do Spec-Kit |
-| **Feature relacionada** | `001-program-query`: consulta de programa por código |
+| **Feature relacionada** | [001-program-query: consulta de programa por código](../specs/001-program-query/spec.md) |
 | **Registro** | 2026-09-17; elaboração autorizada para o caminho com programa encontrado, sem conclusão do H2 |
 
 > [!NOTE]
@@ -27,6 +27,8 @@
 A [origem do item 49](../01-archaeology/legacy-sifap/natural-programs/CADPROG.NSP#L156) foi conferida: para um programa encontrado, a rotina apresenta código, nome, tipo, valor-base armazenado, código de elegibilidade e situação, sem recalcular o valor-base. Esse é o limite da elaboração autorizada. Normalização da entrada, representação da saída e programa ausente continuam nas questões abaixo; ausência permanece no recorte aprovado, com comportamento pendente de validação.
 
 A especificação permanece parcial enquanto essas questões não forem validadas. Não foi fornecida justificativa confirmada para capacidade `[GREENFIELD]`. Nenhuma branch, fonte legada ou política de negócio foi alterada nesta correção.
+
+**Resultado documental:** [REQ-001](../specs/001-program-query/spec.md#req-001-apresentar-o-programa-encontrado) proposto para o programa encontrado, com critérios Dado/Quando/Então, fonte legada e matriz de rastreabilidade. A autorização de elaboração está registrada no [catálogo](../01-archaeology/business-rules-catalog.md#validação-do-recorte-para-especificação), sem mudar a classificação histórica do item 49 ou o status do item 55.
 
 ---
 

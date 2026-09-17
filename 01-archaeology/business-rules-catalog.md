@@ -184,6 +184,12 @@ Ausência de `MASK` não significa ausência de rejeição de caracteres. Compar
 | 54 | O programa aceita tipo, datas, idades e renda máxima sem qualquer validação | — | `CADPROG.NSP:95-105` | Mistério | <!-- mystery: nenhum campo da tela de inclusão é criticado; apenas a operação e a duplicidade de código são verificadas --> |
 | 55 | A consulta detecta ausência de registro testando o contador após o laço | — | `CADPROG.NSP:166-169` | Mistério | <!-- mystery: o comentário declara estilo de 1997 não padronizado e chamado 3312/2004 em aberto --> |
 
+### Validação do recorte para especificação
+
+**Registro complementar de 2026-09-17:** após a proposta de `001-program-query` e do comportamento restrito ao programa encontrado, paula solicitou "faça as correcoes". O recorte autorizado para elaboração apresenta código, nome, tipo, valor-base armazenado, código de elegibilidade e situação do registro encontrado, sem recálculo. A [origem](legacy-sifap/natural-programs/CADPROG.NSP#L156) foi conferida e o [escopo](../02-modern-spec/scope-decisions.md#entrada-da-especificação-ears) registra os limites dessa autorização.
+
+Essa confirmação para especificação não é corroboração pela documentação histórica. Por isso, a classificação documental Inferida do item 49 permanece preservada; não se aumenta a contagem de itens documentalmente Confirmados. A [especificação parcial](../specs/001-program-query/spec.md) registra o comportamento proposto para revisão, sem transformar o item 55, a normalização ou a representação externa em decisões aprovadas.
+
 ---
 
 ## Confronto com os quatro DDMs

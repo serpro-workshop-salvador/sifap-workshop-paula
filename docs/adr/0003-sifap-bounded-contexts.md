@@ -58,7 +58,7 @@ Não adicionamos dependências, tabelas, migrações ou código. A consulta não
 
 ## Relacionados
 
-- REQ-IDs: ainda não atribuídos para esta fatia; este documento não cria requisitos formais.
+- REQ-IDs: [REQ-001](../../specs/001-program-query/spec.md#req-001-apresentar-o-programa-encontrado), proposto para a consulta com programa encontrado. Este ADR não aprova a especificação completa.
 - Escopo: [decisões do Estágio 2](../../02-modern-spec/scope-decisions.md).
 - Descobertas: [catálogo de regras](../../01-archaeology/business-rules-catalog.md), [mapa de dados](../../01-archaeology/data-map.md) e [questões abertas](../../01-archaeology/mysteries-found.md).
 - Os ADRs 0001 e 0002 tratam das primitivas do kit, não dos limites de negócio desta decisão; não são substituídos.
